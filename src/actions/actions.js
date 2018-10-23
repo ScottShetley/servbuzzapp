@@ -1,6 +1,6 @@
 import { USER_LOGIN, USER_LOGOUT } from "./types";
 import axios from "axios";
-let userUrl = "http://localhost:8080/users";
+let userUrl = "https://lit-river-79713.herokuapp.com/users";
 
 export const UserLogin = (username, password) => {
   return dispatch => {
