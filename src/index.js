@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "bootstrap/dist/css/bootstrap.css";
-import "./index.css";
-import { Home, Header, Login, Logout } from "./components";
+import "./scott.css";
+import { Header, Home, Login, Logout, Register } from "./components";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
@@ -21,6 +21,7 @@ const App = props => (
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/login" component={Login} />
+              <Route path="/register" component={Register} />
               <Route path="/logout" component={Logout} />
               <Route
                 render={() => (

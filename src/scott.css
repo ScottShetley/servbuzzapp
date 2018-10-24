@@ -1,0 +1,104 @@
+/* @import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"); */
+body {
+  background-image: url("~/images/BGresized.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+/* added this so we can see the text on the background */
+header,
+h1,
+p,
+.nav-link {
+  color: white;
+}
+.login-block {
+  /* had to move the background-image to the body to avoid multiple backgrounds */
+  /* background-image: url("~/images/BGresized.png"); */
+  /* background-repeat: no-repeat; */
+  /* background-size: 100%; */
+  image-rendering: crisp-edges;
+  /* image-rendering: pixelated; */
+  float: left;
+  width: 100%;
+  padding: 50px 0;
+  height: 100vh;
+}
+.banner-sec {
+  background-size: cover;
+  min-height: 500px;
+  border-radius: 0 10px 10px 0;
+  padding: 0;
+}
+.container {
+  background: #d5c9bd;
+  border-radius: 10px;
+  box-shadow: 15px 20px 0px rgba(0, 0, 0, 0.5);
+}
+.carousel-inner {
+  border-radius: 0 10px 10px 0;
+}
+.carousel-caption {
+  text-align: left;
+  left: 5%;
+}
+.login-sec {
+  padding: 50px 30px;
+  position: relative;
+}
+.login-sec .copy-text {
+  position: absolute;
+  width: 80%;
+  bottom: 20px;
+  font-size: 13px;
+  text-align: center;
+}
+.login-sec .copy-text i {
+  color: #883d39;
+}
+.login-sec .copy-text a {
+  color: #883d39;
+}
+.login-sec h2 {
+  margin-bottom: 30px;
+  font-weight: 800;
+  font-size: 30px;
+  color: #883d39;
+}
+.login-sec h2:after {
+  content: " ";
+  width: 100px;
+  height: 5px;
+  background: #883d39;
+  display: block;
+  margin-top: 20px;
+  border-radius: 3px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.btn-login {
+  background: #883d39;
+  color: #fff;
+  font-weight: 600;
+}
+.banner-text {
+  width: 70%;
+  position: absolute;
+  bottom: 40px;
+  padding-left: 20px;
+}
+.banner-text h2 {
+  color: #fff;
+  font-weight: 600;
+}
+.banner-text h2:after {
+  content: " ";
+  width: 100px;
+  height: 5px;
+  background: #fff;
+  display: block;
+  margin-top: 20px;
+  border-radius: 3px;
+}
+.banner-text p {
+  color: #fff;
+}
