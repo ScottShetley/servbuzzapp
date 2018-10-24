@@ -1,18 +1,19 @@
 import React from "react";
 import { NavLink, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
+import "../scott.css";
 
 const mapStateToProps = state => {
   return {
     token: state.token,
-    username: state.username
+    email: state.email
   };
 };
 
 const Header = props => (
   <header className="mastHead">
     <div className="inner">
-      <h3 className="masthead-brand">Whisper</h3>
+      <h3 className="masthead-brand">Insert Logo Here</h3>
       <nav className="nav nav-masthead justify-content-center">
         <NavLink exact activeClassName="active" className="nav-link" to="/">
           Home
@@ -22,9 +23,14 @@ const Header = props => (
             Login
           </NavLink>
         )}
+        {props.token === null && (
+          <NavLink activeClassName="active" className="nav-link" to="/register">
+            Register
+          </NavLink>
+        )}
         {props.token && (
           <NavLink activeClassName="active" className="nav-link" to="/logout">
-            Logout {props.username}
+            Logout {props.email}
           </NavLink>
         )}
       </nav>

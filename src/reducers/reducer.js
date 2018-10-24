@@ -1,7 +1,7 @@
 import { USER_LOGIN, USER_LOGOUT } from "../actions/types";
 
 const initialState = {
-  username: null,
+  email: null,
   token: null
 };
 
@@ -10,13 +10,13 @@ export const reducer = (state = initialState, action) => {
     case USER_LOGIN:
       return {
         ...state,
-        username: action.username,
+        email: action.email,
         token: action.token
       };
     case USER_LOGOUT:
       return {
         ...state,
-        username: null,
+        email: null,
         token: null
       };
     default:

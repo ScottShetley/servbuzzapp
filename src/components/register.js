@@ -1,93 +1,69 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
-import { UserLogin } from "../actions/actions";
-import "bootstrap/dist/css/bootstrap.css";
-import "jquery/dist/jquery.js";
 
-const mapDispatchToProps = dispatch => {
-  return {
-    onLogin: (email, password) => dispatch(UserLogin(email, password))
-  };
-};
-
-//this is a transition to stateful
-
-class Login extends Component {
-  constructor() {
-    super();
-    this.state = {
-      email: "",
-      password: ""
-    };
-  }
-
-  handleUserChange = event => {
-    this.setState({ email: event.target.value });
-  };
-
-  handlePasswordChange = event => {
-    this.setState({ password: event.target.value });
-  };
-
+class Register extends Component {
   render() {
     return (
-      //scotts template
-
       <div>
+        {/* <head>
+          <link
+            href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+            rel="stylesheet"
+            id="bootstrap-css"
+          />
+          <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" />
+          <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" />
+        </head> */}
         <section className="login-block">
           <div className="container">
             <div className="row">
               <div className="col-md-4 login-sec">
-                <h2 className="text-center">Login Now</h2>
+                <h2 className="text-center">Register Now</h2>
                 <form className="login-form">
                   <div className="form-group">
-                    <label htmlFor="email" className="text-uppercase">
+                    <label
+                      htmlFor="exampleInputEmail1"
+                      className="text-uppercase"
+                    >
                       Email
                     </label>
-
                     <input
+                      type="text"
                       className="form-control"
-                      value={this.state.email}
-                      onChange={this.handleUserChange}
-                      name="email"
+                      placeholder=""
                     />
-                    {this.state.email}
                   </div>
                   <div className="form-group">
-                    <label htmlFor="password" className="text-uppercase">
+                    <label
+                      htmlFor="exampleInputPassword1"
+                      className="text-uppercase"
+                    >
                       Password
                     </label>
-
                     <input
-                      className="form-control"
                       type="password"
-                      value={this.state.password}
-                      onChange={this.handlePasswordChange}
-                      name="password"
+                      className="form-control"
+                      placeholder=""
                     />
-                    {this.state.password}
                   </div>
-
-                  <div className="form-check">
-                    <label className="form-check-label">
-                      <input type="checkbox" className="form-check-input" />
-                      <small>Remember Me</small>
+                  <div className="form-group">
+                    <label
+                      htmlFor="exampleInputPassword1"
+                      className="text-uppercase"
+                    >
+                      Confirm Password
                     </label>
+                    <input
+                      type="password"
+                      className="form-control"
+                      placeholder=""
+                    />
                   </div>
 
-                  <button
-                    type="submit"
-                    className="btn btn-login float-right"
-                    onClick={() => {
-                      console.log(this.state.email);
-                      console.log(this.state.password);
-                      this.props.onLogin(this.state.email, this.state.password);
-
-                      this.props.history.push("/");
-                    }}
-                  >
-                    Submit
-                  </button>
+                  <div className="form-group">
+                    <button type="submit" className="btn btn-login float-right">
+                      Submit
+                    </button>
+                  </div>
                 </form>
                 <div className="copy-text" />
               </div>
@@ -176,93 +152,13 @@ class Login extends Component {
         </section>
       </div>
 
-      //this is a backup of the previous code. attempting to import scott's code above
-
+      // placeholder stuff
       // <div>
-      //   <h3>Login</h3>
-      //   <div className="form-group">
-      // <input
-      //   className="form-control"
-      //   placeholder="username"
-      //   value={this.state.username}
-      //   onChange={this.handleUserChange}
-      //   name="username"
-      // />
-      //     {this.state.username}
-      //   </div>
-      //   <div className="form-group">
-      //     <input
-      //       className="form-control"
-      //       placeholder="password"
-      //       value={this.state.password}
-      //       onChange={this.handlePasswordChange}
-      //       name="password"
-      //     />
-      //     {this.state.password}
-      //   </div>
-      //   <div className="form-group">
-      //     <button
-      //       className="btn btn-default"
-      //       onClick={() => {
-      //         console.log(this.state.username);
-      //         console.log(this.state.password);
-
-      //         this.props.onLogin(this.state.username, this.state.password);
-      //         this.props.history.push("/");
-      //       }}
-      //     >
-      //       Submit
-      //     </button>
-      //   </div>
+      //   <h1 className="cover-heading">Register</h1>
+      //   <p className="lead">lorem ipsum</p>
       // </div>
     );
   }
 }
 
-//this is the stateless component
-
-// const Login = props => {
-//   let username;
-//   let password;
-//   return (
-//     <div>
-//       <h3>Login</h3>
-//       <div className="form-group">
-//         <input
-//           className="form-control"
-//           placeholder="username"
-//           ref={u => {
-//             username = u;
-//           }}
-//         />
-//       </div>
-//       <div className="form-group">
-//         <input
-//           className="form-control"
-//           placeholder="password"
-//           ref={p => {
-//             password = p;
-//           }}
-//         />
-//       </div>
-//       <div className="form-group">
-//         <button
-//           className="btn btn-default"
-//           onClick={() => {
-//             props.onLogin(username.value, password.value);
-//             props.history.push("/");
-//           }}
-//         >
-//           Submit
-//         </button>
-//       </div>
-//     </div>
-//   );
-// };
-
-//this did not change
-
-export default connect(
-  null,
-  mapDispatchToProps
-)(Login);
+export default Register;

@@ -1,13 +1,13 @@
 import { USER_LOGIN, USER_LOGOUT } from "./types";
 import axios from "axios";
-let userUrl = "https://lit-river-79713.herokuapp.com/users";
+let userUrl = "http://lit-river-79713.herokuapp.com/users";
 
-export const UserLogin = (username, password) => {
+export const UserLogin = (email, password) => {
   return dispatch => {
     return axios
-      .post(userUrl + "/signin", { username: username, password: password })
+      .post(userUrl + "/signin", { email: email, password: password })
       .then(response => {
-        dispatch(userLoginSuccess(response.data.username, response.data._id));
+        dispatch(userLoginSuccess(response.data.email, response.data._id));
       })
       .catch(error => {
         throw error;
@@ -15,10 +15,10 @@ export const UserLogin = (username, password) => {
   };
 };
 
-export const userLoginSuccess = (username, token) => {
+export const userLoginSuccess = (email, token) => {
   return {
     type: USER_LOGIN,
-    username: username,
+    email: email,
     token: token
   };
 };
