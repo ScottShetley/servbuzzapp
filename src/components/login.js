@@ -39,7 +39,7 @@ class Login extends Component {
             <div className="row">
               <div className="col-md-4 login-sec">
                 <h2 className="text-center">Login Now</h2>
-                <form className="login-form">
+                <div className="login-form">
                   <div className="form-group">
                     <label htmlFor="email" className="text-uppercase">
                       Email
@@ -76,7 +76,6 @@ class Login extends Component {
                   </div>
 
                   <button
-                    type="submit"
                     className="btn btn-login float-right"
                     onClick={() => {
                       console.log(this.state.email);
@@ -88,7 +87,7 @@ class Login extends Component {
                   >
                     Submit
                   </button>
-                </form>
+                </div>
                 <div className="copy-text" />
               </div>
               <div className="col-md-8 banner-sec">
