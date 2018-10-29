@@ -10,6 +10,7 @@
   background-image: url("~/images/BGresized.png");
   background-size: cover;
 }
+
 /* added this so we can see the text on the background */
 header,
 h1,
@@ -120,4 +121,9 @@ p,
 .cover-heading {
   color: white !important;
   text-shadow: 2px 2px 1px #000;
+}
+/* responsive logo. backgroung image still needs to fill botom when made to be responsive */
+.responsive {
+  max-width: 100%;
+  height: 100%;
 }
