@@ -4,15 +4,6 @@ class Register extends Component {
   render() {
     return (
       <div>
-        {/* <head>
-          <link
-            href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
-            rel="stylesheet"
-            id="bootstrap-css"
-          />
-          <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" />
-          <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" />
-        </head> */}
         <section className="login-block">
           <div className="container">
             <div className="row">
@@ -63,6 +54,83 @@ class Register extends Component {
                     <button type="submit" className="btn btn-login float-right">
                       Submit
                     </button>
+                    <ul
+                      className="nav nav-pills mb-3"
+                      id="pills-tab"
+                      role="tablist"
+                    >
+                      <li className="nav-item">
+                        <a
+                          className="nav-link active"
+                          id="pills-home-tab"
+                          data-toggle="pill"
+                          href="#pills-home"
+                          role="tab"
+                          aria-controls="pills-home"
+                          aria-selected="true"
+                        >
+                          Buzzee
+                        </a>
+                      </li>
+                      <li className="nav-item">
+                        <a
+                          className="nav-link"
+                          id="pills-profile-tab"
+                          data-toggle="pill"
+                          href="#pills-profile"
+                          role="tab"
+                          aria-controls="pills-profile"
+                          aria-selected="false"
+                        >
+                          Buzzor
+                        </a>
+                      </li>
+                      <li className="nav-item">
+                        <a
+                          className="nav-link"
+                          id="pills-contact-tab"
+                          data-toggle="pill"
+                          href="#pills-contact"
+                          role="tab"
+                          aria-controls="pills-contact"
+                          aria-selected="false"
+                        >
+                          {/* Contact */}
+                        </a>
+                      </li>
+                    </ul>
+                    <div
+                      className="tab-content pt-2 pl-1"
+                      id="pills-tabContent"
+                    >
+                      <div
+                        className="tab-pane fade show active"
+                        id="pills-home"
+                        role="tabpanel"
+                        aria-labelledby="pills-home-tab"
+                      >
+                        {/* Consequat occaecat ullamco amet non eiusmod nostrud
+                        dolore irure incididunt est duis anim sunt officia.
+                        Fugiat velit proident aliquip nisi incididunt nostrud
+                        exercitation proident est nisi. Irure magna elit commodo
+                        anim ex veniam culpa eiusmod id nostrud sit cupidatat in
+                        veniam ad. Eiusmod consequat eu adipisicing minim anim
+                        aliquip cupidatat culpa excepteur quis. Occaecat sit eu
+                        exercitation irure Lorem incididunt nostrud. */}
+                      </div>
+                      <div
+                        className="tab-pane fade"
+                        id="pills-profile"
+                        role="tabpanel"
+                        aria-labelledby="pills-profile-tab"
+                      />
+                      {/* <div
+                        className="tab-pane fade"
+                        id="pills-contact"
+                        role="tabpanel"
+                        aria-labelledby="pills-contact-tab"
+                      /> */}
+                    </div>
                   </div>
                 </form>
                 <div className="copy-text" />
@@ -97,13 +165,15 @@ class Register extends Component {
                       />
                       <div className="carousel-caption d-none d-md-block">
                         <div className="banner-text">
-                          {/* <h2>This is Heaven</h2> */}
-                          {/* <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation
-                          </p> */}
+                          <h2>Welcome To Service Buzz</h2>
+                          <p>
+                            Service Buzz is an app that allows a Buzzor to
+                            "buzz" a Buzee for service. Remeber, use Service
+                            Buzz nicely. Buzz unto others as you would wish to
+                            be buzzed upon yourself. Register as a Buzzor(person
+                            recieving service) or a Buzzee(person giving
+                            service).
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -115,13 +185,19 @@ class Register extends Component {
                       />
                       <div className="carousel-caption d-none d-md-block">
                         <div className="banner-text">
-                          {/* <h2>This is Heaven</h2>
-                          <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation
-                          </p> */}
+                          {
+                            <div className="banner-text">
+                              <h2>Welcome To Service Buzz</h2>
+                              <p>
+                                Service Buzz is an app that allows a Buzzor to
+                                "buzz" a Buzee for service. Remeber, use Service
+                                Buzz nicely. Buzz unto others as you would wish
+                                to be buzzed upon yourself. Register as a
+                                Buzzor(person recieving service) or a
+                                Buzzee(person giving service).
+                              </p>
+                            </div>
+                          }
                         </div>
                       </div>
                     </div>
@@ -134,13 +210,17 @@ class Register extends Component {
 
                       <div className="carousel-caption d-none d-md-block">
                         <div className="banner-text">
-                          {/* <h2>This is Heaven</h2> */}
-                          {/* <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation
-                          </p> */}
+                          <div className="banner-text">
+                            <h2>Welcome To Service Buzz</h2>
+                            <p>
+                              Service Buzz is an app that allows a Buzzor to
+                              "buzz" a Buzee for service. Remeber, use Service
+                              Buzz nicely. Buzz unto others as you would wish to
+                              be buzzed upon yourself. Register as a
+                              Buzzor(person recieving service) or a
+                              Buzzee(person giving service).
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>

@@ -1,9 +1,16 @@
 /* @import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"); */
-body {
+/* body {
   background-image: url("~/images/BGresized.png");
   background-repeat: no-repeat;
   background-size: 100%;
+} */
+.backGround {
+  width: 100%;
+  height: 100vh;
+  background-image: url("~/images/BGresized.png");
+  background-size: cover;
 }
+
 /* added this so we can see the text on the background */
 header,
 h1,
@@ -21,7 +28,7 @@ p,
   float: left;
   width: 100%;
   padding: 50px 0;
-  height: 100vh;
+  height: auto;
 }
 .banner-sec {
   background-size: cover;
@@ -34,7 +41,7 @@ p,
   border-radius: 10px;
   box-shadow: 15px 20px 0px rgba(0, 0, 0, 0.5);
 }
-.carousel-inner {
+.carousel-inner > .item {
   border-radius: 0 10px 10px 0;
 }
 .carousel-caption {
@@ -101,4 +108,28 @@ p,
 }
 .banner-text p {
   color: #fff;
+}
+.nav-link.active {
+  color: white !important;
+  background-color: #883d39 !important;
+}
+.banner-text {
+  color: white !important;
+  text-shadow: 2px 2px 1px #000;
+  background-color: rgba(48, 47, 47, 0.377);
+}
+.cover-heading {
+  color: white !important;
+  text-shadow: 4px 4px 2px #000;
+}
+/* responsive logo. backgroung image still needs to fill botom when made to be responsive */
+.responsive {
+  max-width: 100%;
+  height: 100%;
+}
+.paraStyle {
+  color: white !important;
+  text-shadow: 4px 4px 2px #000;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: xx-large;
 }
