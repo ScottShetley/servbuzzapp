@@ -13,15 +13,7 @@ const mapStateToProps = state => {
 const Header = props => (
   <header className="mastHead">
     <div className="inner">
-      <h3 className="masthead-brand">
-        {/* turn this on to have logo in the header */}
-        {/* <img
-          src="images\Service-buzz-logo-1.png"
-          alt="logo"
-          width="1000"
-          height="300"
-        /> */}
-      </h3>
+      <h3 className="masthead-brand">{}</h3>
       <nav className="nav nav-masthead justify-content-center">
         <NavLink exact activeClassName="active" className="nav-link" to="/">
           Home
@@ -44,16 +36,6 @@ const Header = props => (
           </NavLink>
         )}
       </nav>
-
-      <div>
-        <img
-          src="images\Service-buzz-Logo-3.png"
-          alt="logo"
-          class="responsive"
-          width="1300"
-          height="375"
-        />
-      </div>
     </div>
   </header>
 );
