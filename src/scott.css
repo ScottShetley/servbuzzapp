@@ -120,10 +120,15 @@ p,
 }
 .cover-heading {
   color: white !important;
-  text-shadow: 2px 2px 1px #000;
+  text-shadow: 4px 4px 2px #000;
 }
 /* responsive logo. backgroung image still needs to fill botom when made to be responsive */
 .responsive {
   max-width: 100%;
   height: 100%;
+}
+.lead {
+  color: white !important;
+  text-shadow: 4px 4px 2px #000;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
