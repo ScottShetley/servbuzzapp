@@ -120,13 +120,15 @@ class Login extends Component {
                       />
                       <div className="carousel-caption d-none d-md-block">
                         <div className="banner-text">
-                          {/* <h2>This is Heaven</h2> */}
-                          {/* <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation
-                          </p> */}
+                          <h2>Welcome To Service Buzz</h2>
+                          <p>
+                            Service Buzz is an app that allows a Buzzor to
+                            "buzz" a Buzee for service. Remeber, use Service
+                            Buzz nicely. Buzz unto others as you would wish to
+                            be buzzed upon yourself. Register as a Buzzor(person
+                            recieving service) or a Buzzee(person giving
+                            service).
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -138,13 +140,15 @@ class Login extends Component {
                       />
                       <div className="carousel-caption d-none d-md-block">
                         <div className="banner-text">
-                          {/* <h2>This is Heaven</h2>
+                          <h2>Welcome To Service Buzz</h2>
                           <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation
-                          </p> */}
+                            Service Buzz is an app that allows a Buzzor to
+                            "buzz" a Buzee for service. Remeber, use Service
+                            Buzz nicely. Buzz unto others as you would wish to
+                            be buzzed upon yourself. Register as a Buzzor(person
+                            recieving service) or a Buzzee(person giving
+                            service).
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -157,13 +161,15 @@ class Login extends Component {
 
                       <div className="carousel-caption d-none d-md-block">
                         <div className="banner-text">
-                          {/* <h2>This is Heaven</h2> */}
-                          {/* <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation
-                          </p> */}
+                          <h2>Welcome To Service Buzz</h2>
+                          <p>
+                            Service Buzz is an app that allows a Buzzor to
+                            "buzz" a Buzee for service. Remeber, use Service
+                            Buzz nicely. Buzz unto others as you would wish to
+                            be buzzed upon yourself. Register as a Buzzor(person
+                            recieving service) or a Buzzee(person giving
+                            service).
+                          </p>
                         </div>
                       </div>
                     </div>
