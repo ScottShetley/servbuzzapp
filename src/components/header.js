@@ -1,14 +1,14 @@
-import React from "react";
-import { NavLink, withRouter } from "react-router-dom";
-import { connect } from "react-redux";
-import "../scott.css";
+// import React from "react";
+// import { NavLink, withRouter } from "react-router-dom";
+// import { connect } from "react-redux";
+// import "../scott.css";
 
-const mapStateToProps = state => {
-  return {
-    token: state.token,
-    email: state.email
-  };
-};
+// const mapStateToProps = state => {
+//   return {
+//     token: state.token,
+//     email: state.email
+//   };
+// };
 
 const Header = props => (
   <header className="mastHead">
@@ -44,4 +44,4 @@ const Header = props => (
   </header>
 );
 
-export default withRouter(connect(mapStateToProps)(Header));
+// export default withRouter(connect(mapStateToProps)(Header));

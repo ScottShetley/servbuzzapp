@@ -26,6 +26,8 @@ const App = props => (
         <div className="text-center">
           <div className="cover-container d-flex h-100 p-3 mx-auto flex-column">
             <Header />
+          <div className="cover-container d-flex h-100 mx-auto flex-column">
+            <Header2 />
             <main className="inner cover mainSection">
               <Switch>
                 <Route exact path="/" component={Home} />
