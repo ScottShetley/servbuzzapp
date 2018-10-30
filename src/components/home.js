@@ -3,7 +3,7 @@ import "../scott.css";
 
 const Home = props => (
   <div className="paraStyle">
-    {/* <h1 className="cover-heading">What is Service Buzz?</h1> */}
+    {/* <h1 className="cover-heading">What is Servicebuzz?</h1> */}
 
     {/* <p>
       Servicebuzz is an app that allows a Buzzor to "buzz" a Buzee for service.
