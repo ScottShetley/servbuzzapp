@@ -13,7 +13,7 @@ const mapStateToProps = state => {
 const Header = props => (
   <header className="mastHead">
     <div className="inner">
-      <h3 className="masthead-brand">{}</h3>
+      <h3 className="masthead-brand">Service Buzz</h3>
       <nav className="nav nav-masthead justify-content-center">
         <NavLink exact activeClassName="active" className="nav-link" to="/">
           Home
