@@ -41,7 +41,7 @@ class Register extends Component {
                       htmlFor="exampleInputEmail1"
                       className="text-uppercase"
                     >
-                      Email
+                      Email Address
                     </label>
                     <input
                       type="password"
