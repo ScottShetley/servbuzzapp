@@ -12,17 +12,14 @@ const mapStateToProps = state => {
 
 const Header2 = props => (
   <div class="header">
-    <a href="#default" class="logo">
+    <NavLink className="logo" exact activeClassName="active" to="/">
       <link
         href="https://fonts.googleapis.com/css?family=Monoton"
         rel="stylesheet"
       />
       Service Buzz
-    </a>
+    </NavLink>
     <div class="header-right">
-      <NavLink exact activeClassName="active" to="/">
-        Home
-      </NavLink>
       {props.token === null && (
         <NavLink activeClassName="active" className="nav-link" to="/login">
           Login

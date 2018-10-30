@@ -2,6 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "./scott.css";
+
+import { Header2, Home, Login, Logout, Register } from "./components";
+
 import {
   Buzzee,
   Buzzor,
@@ -11,6 +14,7 @@ import {
   Logout,
   Register
 } from "./components";
+
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";

@@ -172,7 +172,10 @@ p,
   background-color: #380618;
   color: #93bab9;
 }
-
+.logo a:hover {
+  background-color: #93bab9;
+  color: #380618;
+}
 /* Float the link section to the right */
 .header-right {
   float: right;
