@@ -7,9 +7,8 @@ const Home = props => (
 
     {/* <p>
       Servicebuzz is an app that allows a Buzzor to "buzz" a Buzee for service.
-      Remeber, use Servicebuzz nicely. Buzz unto others as you would wish to be
-      buzzed upon yourself. Register as a Buzzor(person recieving service) or a
-      Buzzee(person giving service).
+      Remember, use Servicebuzz nicely. Buzz unto others as you would wish to be
+     
     </p> */}
   </div>
 );
