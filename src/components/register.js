@@ -33,7 +33,7 @@ class Register extends Component {
                     <input
                       type="text"
                       className="form-control"
-                      placeholder=""
+                      placeholder="Name"
                     />
                   </div>
                   <div className="form-group">
@@ -46,7 +46,7 @@ class Register extends Component {
                     <input
                       type="password"
                       className="form-control"
-                      placeholder=""
+                      placeholder="Email"
                     />
                   </div>
                   <div className="form-group">
@@ -59,7 +59,7 @@ class Register extends Component {
                     <input
                       type="password"
                       className="form-control"
-                      placeholder=""
+                      placeholder="Password"
                     />
                   </div>
 
