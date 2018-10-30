@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "./scott.css";
-import { Header, Home, Login, Logout, Register } from "./components";
+import { Header2, Header, Home, Login, Logout, Register } from "./components";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
@@ -17,7 +17,7 @@ const App = props => (
       <Router>
         <div className="text-center">
           <div className="cover-container d-flex h-100 p-3 mx-auto flex-column">
-            <Header />
+            <Header2 />
             <main className="inner cover mainSection">
               <Switch>
                 <Route exact path="/" component={Home} />
