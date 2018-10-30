@@ -20,25 +20,18 @@ const Header2 = props => (
       Service Buzz
     </a>
     <div class="header-right">
-      <a class="active" href="#home">
-        <NavLink exact activeClassName="active" to="/" />
+      <NavLink exact activeClassName="active" to="/">
         Home
-      </a>
+      </NavLink>
       {props.token === null && (
-        <a class="active" href="#login">
-          <NavLink activeClassName="active" className="nav-link" to="/login" />
+        <NavLink activeClassName="active" className="nav-link" to="/login">
           Login
-        </a>
+        </NavLink>
       )}
       {props.token === null && (
-        <a class="active" href="#registration">
-          <NavLink
-            activeClassName="active"
-            className="nav-link"
-            to="/register"
-          />
+        <NavLink activeClassName="active" className="nav-link" to="/register">
           Registration
-        </a>
+        </NavLink>
       )}
       {props.token && (
         <NavLink activeClassName="active" className="nav-link" to="/logout">
