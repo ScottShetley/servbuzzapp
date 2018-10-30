@@ -1,8 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "bootstrap/dist/css/bootstrap.css";
+import "jquery/dist/jquery.js";
 import "./scott.css";
-import { Header, Home, Login, Logout, Register } from "./components";
+import {
+  Header,
+  Home,
+  Login,
+  Logout,
+  Register,
+  Buzzee,
+  Buzzor
+} from "./components";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
@@ -23,6 +32,8 @@ const App = props => (
               <Route path="/login" component={Login} />
               <Route path="/register" component={Register} />
               <Route path="/logout" component={Logout} />
+              <Route path="/buzzee" component={Buzzee} />
+              <Route path="/buzzor" component={Buzzor} />
               <Route
                 render={() => (
                   <div>

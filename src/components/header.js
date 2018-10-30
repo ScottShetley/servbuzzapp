@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import "../scott.css";
 
 const mapStateToProps = state => {
   return {
@@ -31,6 +30,16 @@ const Header = props => (
         {props.token && (
           <NavLink activeClassName="active" className="nav-link" to="/logout">
             Logout {props.email}
+          </NavLink>
+        )}
+        {props.token && (
+          <NavLink activeClassName="active" className="nav-link" to="/buzzee">
+            Buzzee
+          </NavLink>
+        )}
+        {props.token && (
+          <NavLink activeClassName="active" className="nav-link" to="/buzzor">
+            Buzzor
           </NavLink>
         )}
       </nav>

@@ -13,10 +13,10 @@ p,
 }
 .login-block {
   /* had to move the background-image to the body to avoid multiple backgrounds */
-  /* background-image: url("~/images/BGresized.png"); */
-  /* background-repeat: no-repeat; */
-  /* background-size: 100%; */
-  image-rendering: crisp-edges;
+  /* background-image: url("~/images/BGresized.png");
+  background-repeat: no-repeat;
+  background-size: 100%; */
+  /* image-rendering: crisp-edges; */
   /* image-rendering: pixelated; */
   float: left;
   width: 100%;

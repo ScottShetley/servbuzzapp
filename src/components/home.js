@@ -1,5 +1,4 @@
 import React from "react";
-import "../scott.css";
 
 const Home = props => (
   <div>

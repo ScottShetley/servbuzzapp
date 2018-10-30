@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { UserLogin } from "../actions/actions";
-import "bootstrap/dist/css/bootstrap.css";
-import "jquery/dist/jquery.js";
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -38,7 +36,7 @@ class Login extends Component {
           <div className="container">
             <div className="row">
               <div className="col-md-4 login-sec">
-                <h2 className="text-center">Login Now</h2>
+                <h2 className="text-center">Login</h2>
                 <div className="login-form">
                   <div className="form-group">
                     <label htmlFor="email" className="text-uppercase">
@@ -74,7 +72,7 @@ class Login extends Component {
                       <small>Remember Me</small>
                     </label>
                   </div>
-
+                  <br />
                   <button
                     className="btn btn-login float-right"
                     onClick={() => {
@@ -120,13 +118,13 @@ class Login extends Component {
                       />
                       <div className="carousel-caption d-none d-md-block">
                         <div className="banner-text">
-                          {/* <h2>This is Heaven</h2> */}
-                          {/* <p>
+                          <h2>This is Heaven</h2>
+                          <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing
                             elit, sed do eiusmod tempor incididunt ut labore et
                             dolore magna aliqua. Ut enim ad minim veniam, quis
                             nostrud exercitation
-                          </p> */}
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -138,13 +136,13 @@ class Login extends Component {
                       />
                       <div className="carousel-caption d-none d-md-block">
                         <div className="banner-text">
-                          {/* <h2>This is Heaven</h2>
+                          <h2>This is Heaven</h2>
                           <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing
                             elit, sed do eiusmod tempor incididunt ut labore et
                             dolore magna aliqua. Ut enim ad minim veniam, quis
                             nostrud exercitation
-                          </p> */}
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -157,13 +155,13 @@ class Login extends Component {
 
                       <div className="carousel-caption d-none d-md-block">
                         <div className="banner-text">
-                          {/* <h2>This is Heaven</h2> */}
-                          {/* <p>
+                          <h2>This is Heaven</h2>
+                          <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing
                             elit, sed do eiusmod tempor incididunt ut labore et
                             dolore magna aliqua. Ut enim ad minim veniam, quis
                             nostrud exercitation
-                          </p> */}
+                          </p>
                         </div>
                       </div>
                     </div>
