@@ -13,14 +13,31 @@ const mapStateToProps = state => {
 const Header2 = props => (
   <div class="header">
     <a href="#default" class="logo">
-      CompanyLogo
+      <link
+        href="https://fonts.googleapis.com/css?family=Monoton"
+        rel="stylesheet"
+      />
+      Service Buzz
     </a>
     <div class="header-right">
-      <a class="active" href="#home">
+      <NavLink exact activeClassName="active" to="/">
         Home
-      </a>
-      <a href="#contact">Contact</a>
-      <a href="#about">About</a>
+      </NavLink>
+      {props.token === null && (
+        <NavLink activeClassName="active" className="nav-link" to="/login">
+          Login
+        </NavLink>
+      )}
+      {props.token === null && (
+        <NavLink activeClassName="active" className="nav-link" to="/register">
+          Registration
+        </NavLink>
+      )}
+      {props.token && (
+        <NavLink activeClassName="active" className="nav-link" to="/logout">
+          Logout {props.email}
+        </NavLink>
+      )}
     </div>
   </div>
 );
