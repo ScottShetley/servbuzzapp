@@ -1,4 +1,3 @@
-nayib
 test
 
 servicebuzz
