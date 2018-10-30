@@ -17,8 +17,13 @@ const Header = props => (
       <nav className="nav nav-masthead justify-content-center">
         <NavLink exact activeClassName="active" className="nav-link" to="/">
           Home
+        </NavLink>{" "}
+        <NavLink activeClassName="active" className="nav-link" to="/buzzee">
+          Buzzee
+        </NavLink>{" "}
+        <NavLink activeClassName="active" className="nav-link" to="/buzzor">
+          Buzzor
         </NavLink>
-
         {props.token === null && (
           <NavLink activeClassName="active" className="nav-link" to="/register">
             Register
@@ -29,7 +34,6 @@ const Header = props => (
             Login
           </NavLink>
         )}
-
         {props.token && (
           <NavLink activeClassName="active" className="nav-link" to="/logout">
             Logout {props.email}

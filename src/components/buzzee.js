@@ -1,19 +1,9 @@
 import React from "react";
-import { connect } from "react-redux";
-import { SetEditId } from "../actions/actions";
-import "./buzzee.css";
-import { Provider } from "react-redux";
-import thunk from "redux-thunk";
 
-<body>
-  <h2>Buzzee</h2>
-  <p>Add a button to an image:</p>
-  <div class="container">
-    <img
-      src="C:\Users\Nayib\Desktop\projectphase\images\BGresized.png"
-      alt="Snow"
-      style="width:100%"
-    />
-    <button class="btn">Buzzee</button>
+const Buzzee = props => (
+  <div>
+    <h1>Buzzee works</h1>
+    <button>Buzzee</button>
   </div>
-</body>;
+);
+export default Buzzee;
