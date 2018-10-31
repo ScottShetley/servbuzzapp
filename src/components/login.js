@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { UserLogin } from "../actions/actions";
-import "bootstrap/dist/css/bootstrap.css";
-import "jquery/dist/jquery.js";
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -46,12 +44,13 @@ class Login extends Component {
                     </label>
 
                     <input
+                      type="email"
                       className="form-control"
+                      placeholder="email"
                       value={this.state.email}
                       onChange={this.handleEmailChange}
                       name="email"
                     />
-                    {this.state.email}
                   </div>
                   <div className="form-group">
                     <label htmlFor="password" className="text-uppercase">
@@ -61,11 +60,11 @@ class Login extends Component {
                     <input
                       className="form-control"
                       type="password"
+                      placeholder="password"
                       value={this.state.password}
                       onChange={this.handlePasswordChange}
                       name="password"
                     />
-                    {this.state.password}
                   </div>
 
                   <div className="form-check">
@@ -190,7 +189,7 @@ class Login extends Component {
       //   className="form-control"
       //   placeholder="username"
       //   value={this.state.username}
-      //   onChange={this.handleEmailChange}
+      //   onChange={this.handleUserChange}
       //   name="username"
       // />
       //     {this.state.username}

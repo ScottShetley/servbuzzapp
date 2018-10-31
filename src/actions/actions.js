@@ -18,7 +18,11 @@ export const UserLogin = (email, password) => {
 export const UserRegister = (name, email, password) => {
   return dispatch => {
     return axios
-      .post(userUrl + "/signup", { name: name, email: email, password: password })
+      .post(userUrl + "/signup", {
+        name: name,
+        email: email,
+        password: password
+      })
       .then(response => {
         dispatch(userLoginSuccess(response.data.email, response.data._id));
       })

@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "bootstrap/dist/css/bootstrap.css";
+import "jquery/dist/jquery.js";
 import "./scott.css";
 import { Header, Home, Login, Logout, Register } from "./components";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";

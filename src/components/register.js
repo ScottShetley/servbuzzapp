@@ -1,12 +1,21 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { UserRegister } from "../actions/actions";
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onRegister: (name, email, password) =>
+      dispatch(UserRegister(name, email, password))
+  };
+};
 
 class Register extends Component {
   constructor() {
     super();
     this.state = {
-      name: '',
-      email: '',
-      password: '',
+      name: "",
+      email: "",
+      password: "",
       errors: {}
     };
   }
@@ -24,8 +33,6 @@ class Register extends Component {
 
   render() {
     return (
-
-
       <div>
         {/* <head>
           <link
@@ -42,7 +49,6 @@ class Register extends Component {
               <div className="col-md-4 login-sec">
                 <h2 className="text-center">Register Now</h2>
                 <form className="login-form">
-
                   <div className="form-group">
                     <label htmlFor="name" className="text-uppercase">
                       Name
@@ -56,7 +62,6 @@ class Register extends Component {
                       onChange={this.handleNameChange}
                       name="name"
                     />
-                    {this.state.name}
                   </div>
 
                   <div className="form-group">
@@ -72,7 +77,6 @@ class Register extends Component {
                       onChange={this.handleEmailChange}
                       name="email"
                     />
-                    {this.state.email}
                   </div>
 
                   <div className="form-group">
@@ -86,22 +90,24 @@ class Register extends Component {
                       value={this.state.password}
                       onChange={this.handlePasswordChange}
                       name="password"
-                    // onChange={() => {
-                    //   //verification part - confirm password
-                    // }}
+                      // onChange={() => {
+                      //   //verification part - confirm password
+                      // }}
                     />
-
-                    {this.state.password}
                   </div>
 
                   <div className="form-group">
                     <button
-                      type="submit" className="btn btn-login float-right"
+                      className="btn btn-login float-right"
                       onClick={() => {
                         console.log(this.state.name);
                         console.log(this.state.email);
                         console.log(this.state.password);
-                        this.props.onRegister(this.state.name, this.state.email, this.state.password);
+                        this.props.onRegister(
+                          this.state.name,
+                          this.state.email,
+                          this.state.password
+                        );
 
                         this.props.history.push("/");
                       }}
@@ -109,8 +115,6 @@ class Register extends Component {
                       Submit
                     </button>
                   </div>
-
-
                 </form>
                 <div className="copy-text" />
               </div>
@@ -208,6 +212,7 @@ class Register extends Component {
   }
 }
 
-
-
-export default Register;
+export default connect(
+  null,
+  mapDispatchToProps
+)(Register);
