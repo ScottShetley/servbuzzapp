@@ -48,6 +48,7 @@ class Register extends Component {
                       className="form-control"
                       placeholder=""
                     />
+                    <br />
                   </div>
 
                   <div className="form-group">

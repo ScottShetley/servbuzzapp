@@ -1,19 +1,28 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "bootstrap/dist/css/bootstrap.css";
+import "jquery/dist/jquery.js";
 import "./scott.css";
-
-import { Header2, Home, Login, Logout, Register } from "./components";
 
 import {
   Buzzee,
   Buzzor,
-  Header,
+  Header2,
   Home,
   Login,
   Logout,
   Register
 } from "./components";
+
+// import {
+//   Buzzee,
+//   Buzzor,
+//   Header,
+//   Home,
+//   Login,
+//   Logout,
+//   Register
+// } from "./components";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
@@ -28,8 +37,8 @@ const App = props => (
     <Provider store={store}>
       <Router>
         <div className="text-center">
-          <div className="cover-container d-flex h-100 p-3 mx-auto flex-column">
-            <Header />
+          {/* <div className="cover-container d-flex h-100 p-3 mx-auto flex-column">
+            <Header /> */}
           <div className="cover-container d-flex h-100 mx-auto flex-column">
             <Header2 />
             <main className="inner cover mainSection">

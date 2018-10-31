@@ -141,24 +141,26 @@ p,
 }
 
 /* Style the header links */
-.header a {
+.header a.nav-link {
   float: left;
   color: #380618;
   text-align: center;
   padding: 25px;
-  text-decoration: none;
-  font-size: 18px;
+  font-weight: bold;
+  font-size: 36px;
   line-height: 25px;
   border-radius: 0px;
 }
 
 /* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
 .header a.logo {
+  text-decoration: none;
+  float: left;
   font-size: 50px;
   font-family: "Monoton", cursive;
-  background-color: #380618;
+  background-color: #93bab9;
   border-radius: 0px;
-  color: #93bab9;
+  color: #380618;
 }
 
 /* Change the background color on mouse-over */
@@ -172,10 +174,13 @@ p,
   background-color: #380618;
   color: #93bab9;
 }
-.logo a:hover {
+
+/* commented this out to no effect */
+/* .logo a:hover {
   background-color: #93bab9;
   color: #380618;
-}
+} */
+
 /* Float the link section to the right */
 .header-right {
   float: right;
