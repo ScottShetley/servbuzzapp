@@ -21,7 +21,7 @@ class Login extends Component {
     };
   }
 
-  handleUserChange = event => {
+  handleEmailChange = event => {
     this.setState({ email: event.target.value });
   };
 
@@ -48,7 +48,7 @@ class Login extends Component {
                     <input
                       className="form-control"
                       value={this.state.email}
-                      onChange={this.handleUserChange}
+                      onChange={this.handleEmailChange}
                       name="email"
                     />
                     {this.state.email}
@@ -190,7 +190,7 @@ class Login extends Component {
       //   className="form-control"
       //   placeholder="username"
       //   value={this.state.username}
-      //   onChange={this.handleUserChange}
+      //   onChange={this.handleEmailChange}
       //   name="username"
       // />
       //     {this.state.username}
