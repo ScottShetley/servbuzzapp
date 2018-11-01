@@ -1,4 +1,4 @@
-import { USER_LOGIN, USER_LOGOUT } from "../actions/types";
+import { USER_LOGIN, USER_LOGOUT, USER_REGISTER } from "../actions/types";
 
 const initialState = {
   email: null,
@@ -7,6 +7,13 @@ const initialState = {
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
+
+    case USER_REGISTER:
+      return {
+        ...state,
+        email: action.email,
+        token: action.token
+      };
     case USER_LOGIN:
       return {
         ...state,
@@ -19,6 +26,7 @@ export const reducer = (state = initialState, action) => {
         email: null,
         token: null
       };
+
     default:
       return state;
   }

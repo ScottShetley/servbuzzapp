@@ -11,7 +11,7 @@ const mapDispatchToProps = dispatch => {
 
 const Logout = props => {
   props.onLogout();
-  return <Redirect to="login" />;
+  return <Redirect to="/" />;
 };
 
 export default connect(
