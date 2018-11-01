@@ -75,12 +75,15 @@ class Register extends Component {
                       >
                         Password
                     </label>
-                      <input
-                        type="password"
-                        className="form-control"
-                        placeholder="Password"
-                      />
-                    </div>
+
+                    <input
+                      type="password"
+                      className="form-control"
+                      placeholder=""
+                    />
+                    <br />
+                  </div>
+
 
                     <div className="form-group">
                       <button type="submit" className="btn btn-login float-right">

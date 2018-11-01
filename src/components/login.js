@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { UserLogin } from "../actions/actions";
-import "bootstrap/dist/css/bootstrap.css";
-import "jquery/dist/jquery.js";
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -51,7 +49,7 @@ class Login extends Component {
                       onChange={this.handleUserChange}
                       name="email"
                     />
-                    {this.state.email}
+                    {/* {this.state.email} */}
                   </div>
                   <div className="form-group">
                     <label htmlFor="password" className="text-uppercase">
@@ -65,15 +63,17 @@ class Login extends Component {
                       onChange={this.handlePasswordChange}
                       name="password"
                     />
-                    {this.state.password}
+                    {/* {this.state.password} */}
                   </div>
-
+                  <br />
                   <div className="form-check">
                     <label className="form-check-label">
                       <input type="checkbox" className="form-check-input" />
                       <small>Remember Me</small>
                     </label>
                   </div>
+                  <br />
+                  <br />
 
                   <button
                     className="btn btn-login float-right"
@@ -87,6 +87,51 @@ class Login extends Component {
                   >
                     Submit
                   </button>
+                  <ul
+                    className="nav nav-pills mb-3"
+                    id="pills-tab"
+                    role="tablist"
+                  >
+                    <li className="nav-item">
+                      <a
+                        className="nav-link active"
+                        id="pills-home-tab"
+                        data-toggle="pill"
+                        href="#pills-home"
+                        role="tab"
+                        aria-controls="pills-home"
+                        aria-selected="true"
+                      >
+                        Buzzee
+                      </a>
+                    </li>
+                    <li className="nav-item">
+                      <a
+                        className="nav-link"
+                        id="pills-profile-tab"
+                        data-toggle="pill"
+                        href="#pills-profile"
+                        role="tab"
+                        aria-controls="pills-profile"
+                        aria-selected="false"
+                      >
+                        Buzzor
+                      </a>
+                    </li>
+                    <li className="nav-item">
+                      <a
+                        className="nav-link"
+                        id="pills-contact-tab"
+                        data-toggle="pill"
+                        href="#pills-contact"
+                        role="tab"
+                        aria-controls="pills-contact"
+                        aria-selected="false"
+                      >
+                        {/* Contact */}
+                      </a>
+                    </li>
+                  </ul>
                 </div>
                 <div className="copy-text" />
               </div>

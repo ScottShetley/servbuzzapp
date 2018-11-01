@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import "../scott.css";
 
 const mapStateToProps = state => {
   return {
@@ -11,7 +10,7 @@ const mapStateToProps = state => {
 };
 
 const Header2 = props => (
-  <div class="header">
+  <div className="header">
     <NavLink className="logo" exact activeClassName="active" to="/">
       <link
         href="https://fonts.googleapis.com/css?family=Monoton"
@@ -19,7 +18,7 @@ const Header2 = props => (
       />
       Service Buzz
     </NavLink>
-    <div class="header-right">
+    <div className="header-right">
       {props.token === null && (
         <NavLink activeClassName="active" className="nav-link" to="/login">
           Login
