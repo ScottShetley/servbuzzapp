@@ -84,6 +84,7 @@ class Register extends Component {
                       Password
                     </label>
 
+
                     <input
                       className="form-control"
                       type="password"
