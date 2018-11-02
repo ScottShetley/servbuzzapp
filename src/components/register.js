@@ -34,20 +34,11 @@ class Register extends Component {
   render() {
     return (
       <div>
-        {/* <head>
-          <link
-            href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
-            rel="stylesheet"
-            id="bootstrap-css"
-          />
-          <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" />
-          <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" />
-        </head> */}
         <section className="login-block">
           <div className="container">
             <div className="row">
               <div className="col-md-4 login-sec">
-                <h2 className="text-center">Register Now</h2>
+                <h2 className="text-center">Register</h2>
                 <form className="login-form">
                   <div className="form-group">
                     <label htmlFor="name" className="text-uppercase">
@@ -149,13 +140,13 @@ class Register extends Component {
                       />
                       <div className="carousel-caption d-none d-md-block">
                         <div className="banner-text">
-                          {/* <h2>This is Heaven</h2> */}
-                          {/* <p>
+                          <h2>This is Heaven</h2>
+                          <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing
                             elit, sed do eiusmod tempor incididunt ut labore et
                             dolore magna aliqua. Ut enim ad minim veniam, quis
                             nostrud exercitation
-                          </p> */}
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -167,13 +158,13 @@ class Register extends Component {
                       />
                       <div className="carousel-caption d-none d-md-block">
                         <div className="banner-text">
-                          {/* <h2>This is Heaven</h2>
+                          <h2>This is Heaven</h2>
                           <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing
                             elit, sed do eiusmod tempor incididunt ut labore et
                             dolore magna aliqua. Ut enim ad minim veniam, quis
                             nostrud exercitation
-                          </p> */}
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -186,13 +177,13 @@ class Register extends Component {
 
                       <div className="carousel-caption d-none d-md-block">
                         <div className="banner-text">
-                          {/* <h2>This is Heaven</h2> */}
-                          {/* <p>
+                          <h2>This is Heaven</h2>
+                          <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing
                             elit, sed do eiusmod tempor incididunt ut labore et
                             dolore magna aliqua. Ut enim ad minim veniam, quis
                             nostrud exercitation
-                          </p> */}
+                          </p>
                         </div>
                       </div>
                     </div>

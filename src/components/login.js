@@ -36,7 +36,7 @@ class Login extends Component {
           <div className="container">
             <div className="row">
               <div className="col-md-4 login-sec">
-                <h2 className="text-center">Login Now</h2>
+                <h2 className="text-center">Login</h2>
                 <div className="login-form">
                   <div className="form-group">
                     <label htmlFor="email" className="text-uppercase">
@@ -76,7 +76,9 @@ class Login extends Component {
                     </label>
                   </div>
                   <br />
+
                   <br />
+
 
                   <button
                     className="btn btn-login float-right"
@@ -168,6 +170,7 @@ class Login extends Component {
                       />
                       <div className="carousel-caption d-none d-md-block">
                         <div className="banner-text">
+
                           <h2>Welcome To Service Buzz</h2>
                           <p>
                             Servicebuzz is an app that allows a Buzzor to "buzz"
@@ -176,6 +179,7 @@ class Login extends Component {
                             buzzed upon yourself. Register as a Buzzor(person
                             recieving service) or a Buzzee(person giving
                             service).
+
                           </p>
                         </div>
                       </div>
@@ -188,6 +192,7 @@ class Login extends Component {
                       />
                       <div className="carousel-caption d-none d-md-block">
                         <div className="banner-text">
+
                           <h2>Welcome To Service Buzz</h2>
                           <p>
                             Servicebuzz is an app that allows a Buzzor to "buzz"
@@ -196,6 +201,7 @@ class Login extends Component {
                             buzzed upon yourself. Register as a Buzzor(person
                             recieving service) or a Buzzee(person giving
                             service).
+
                           </p>
                         </div>
                       </div>
@@ -209,6 +215,7 @@ class Login extends Component {
 
                       <div className="carousel-caption d-none d-md-block">
                         <div className="banner-text">
+
                           <h2>Welcome To Service Buzz</h2>
                           <p>
                             Service Buzz is an app that allows a Buzzor to
@@ -217,6 +224,7 @@ class Login extends Component {
                             be buzzed upon yourself. Register as a Buzzor(person
                             recieving service) or a Buzzee(person giving
                             service).
+
                           </p>
                         </div>
                       </div>

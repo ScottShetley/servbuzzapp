@@ -3,27 +3,15 @@ import ReactDOM from "react-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "jquery/dist/jquery.js";
 import "./scott.css";
-
 import {
-  Buzzee,
-  Buzzor,
   Header2,
   Home,
   Login,
   Logout,
-  Register
+  Register,
+  Buzzee,
+  Buzzor
 } from "./components";
-
-// import {
-//   Buzzee,
-//   Buzzor,
-//   Header,
-//   Home,
-//   Login,
-//   Logout,
-//   Register
-// } from "./components";
-
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
