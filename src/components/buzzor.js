@@ -7,8 +7,6 @@ const Buzzor = props => (
   <div>
     <h1 className="cover-heading">buzzor works</h1>
     <button
-      // className="btn btn-primary"
-      // onClick={this.handleNotificationChange}
       onClick={() => {
         Push.create("Buzzor Works");
       }}
