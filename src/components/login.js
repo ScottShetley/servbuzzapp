@@ -51,6 +51,7 @@ class Login extends Component {
                       onChange={this.handleEmailChange}
                       name="email"
                     />
+
                   </div>
                   <div className="form-group">
                     <label htmlFor="password" className="text-uppercase">
@@ -65,14 +66,17 @@ class Login extends Component {
                       onChange={this.handlePasswordChange}
                       name="password"
                     />
-                  </div>
 
+                  </div>
+                  <br />
                   <div className="form-check">
                     <label className="form-check-label">
                       <input type="checkbox" className="form-check-input" />
                       <small>Remember Me</small>
                     </label>
                   </div>
+                  <br />
+                  <br />
 
                   <button
                     className="btn btn-login float-right"
@@ -86,6 +90,51 @@ class Login extends Component {
                   >
                     Submit
                   </button>
+                  <ul
+                    className="nav nav-pills mb-3"
+                    id="pills-tab"
+                    role="tablist"
+                  >
+                    <li className="nav-item">
+                      <a
+                        className="nav-link active"
+                        id="pills-home-tab"
+                        data-toggle="pill"
+                        href="#pills-home"
+                        role="tab"
+                        aria-controls="pills-home"
+                        aria-selected="true"
+                      >
+                        Buzzee
+                      </a>
+                    </li>
+                    <li className="nav-item">
+                      <a
+                        className="nav-link"
+                        id="pills-profile-tab"
+                        data-toggle="pill"
+                        href="#pills-profile"
+                        role="tab"
+                        aria-controls="pills-profile"
+                        aria-selected="false"
+                      >
+                        Buzzor
+                      </a>
+                    </li>
+                    <li className="nav-item">
+                      <a
+                        className="nav-link"
+                        id="pills-contact-tab"
+                        data-toggle="pill"
+                        href="#pills-contact"
+                        role="tab"
+                        aria-controls="pills-contact"
+                        aria-selected="false"
+                      >
+                        {/* Contact */}
+                      </a>
+                    </li>
+                  </ul>
                 </div>
                 <div className="copy-text" />
               </div>
@@ -121,10 +170,10 @@ class Login extends Component {
                         <div className="banner-text">
                           <h2>Welcome To Service Buzz</h2>
                           <p>
-                            Service Buzz is an app that allows a Buzzor to
-                            "buzz" a Buzee for service. Remeber, use Service
-                            Buzz nicely. Buzz unto others as you would wish to
-                            be buzzed upon yourself. Register as a Buzzor(person
+                            Servicebuzz is an app that allows a Buzzor to "buzz"
+                            a Buzee for service. Remember, use Servicebuzz
+                            nicely. Buzz unto others as you would wish to be
+                            buzzed upon yourself. Register as a Buzzor(person
                             recieving service) or a Buzzee(person giving
                             service).
                           </p>
@@ -141,10 +190,10 @@ class Login extends Component {
                         <div className="banner-text">
                           <h2>Welcome To Service Buzz</h2>
                           <p>
-                            Service Buzz is an app that allows a Buzzor to
-                            "buzz" a Buzee for service. Remeber, use Service
-                            Buzz nicely. Buzz unto others as you would wish to
-                            be buzzed upon yourself. Register as a Buzzor(person
+                            Servicebuzz is an app that allows a Buzzor to "buzz"
+                            a Buzee for service. Remeber, use Servicebuzz
+                            nicely. Buzz unto others as you would wish to be
+                            buzzed upon yourself. Register as a Buzzor(person
                             recieving service) or a Buzzee(person giving
                             service).
                           </p>
