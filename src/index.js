@@ -4,13 +4,13 @@ import "bootstrap/dist/css/bootstrap.css";
 import "jquery/dist/jquery.js";
 import "./scott.css";
 import {
+  Buzzee,
+  Buzzor,
   Header2,
   Home,
   Login,
   Logout,
   Register,
-  Buzzee,
-  Buzzor
 } from "./components";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
