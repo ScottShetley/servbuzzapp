@@ -1,6 +1,36 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { UserRegister } from "../actions/actions";
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onRegister: (name, email, password) =>
+      dispatch(UserRegister(name, email, password))
+  };
+};
 
 class Register extends Component {
+  constructor() {
+    super();
+    this.state = {
+      name: "",
+      email: "",
+      password: "",
+      errors: {}
+    };
+  }
+  handleNameChange = event => {
+    this.setState({ name: event.target.value });
+  };
+
+  handleEmailChange = event => {
+    this.setState({ email: event.target.value });
+  };
+
+  handlePasswordChange = event => {
+    this.setState({ password: event.target.value });
+  };
+
   render() {
     return (
       <div>
@@ -8,50 +38,71 @@ class Register extends Component {
           <div className="container">
             <div className="row">
               <div className="col-md-4 login-sec">
-                <h2 className="text-center">Register Now</h2>
+                <h2 className="text-center">Register</h2>
                 <form className="login-form">
                   <div className="form-group">
-                    <label
-                      htmlFor="exampleInputEmail1"
-                      className="text-uppercase"
-                    >
-                      Email
+                    <label htmlFor="name" className="text-uppercase">
+                      Name
                     </label>
+
                     <input
                       type="text"
                       className="form-control"
-                      placeholder=""
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label
-                      htmlFor="exampleInputPassword1"
-                      className="text-uppercase"
-                    >
-                      Password
-                    </label>
-                    <input
-                      type="password"
-                      className="form-control"
-                      placeholder=""
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label
-                      htmlFor="exampleInputPassword1"
-                      className="text-uppercase"
-                    >
-                      Confirm Password
-                    </label>
-                    <input
-                      type="password"
-                      className="form-control"
-                      placeholder=""
+                      placeholder="Name"
+                      value={this.state.name}
+                      onChange={this.handleNameChange}
+                      name="name"
                     />
                   </div>
 
                   <div className="form-group">
-                    <button type="submit" className="btn btn-login float-right">
+                    <label htmlFor="email" className="text-uppercase">
+                      Email
+                    </label>
+
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Email"
+                      value={this.state.email}
+                      onChange={this.handleEmailChange}
+                      name="email"
+                    />
+                  </div>
+
+                  <div className="form-group">
+                    <label htmlFor="password" className="text-uppercase">
+                      Password
+                    </label>
+
+                    <input
+                      className="form-control"
+                      type="password"
+                      value={this.state.password}
+                      onChange={this.handlePasswordChange}
+                      name="password"
+                      // onChange={() => {
+                      //   //verification part - confirm password
+                      // }}
+                    />
+                  </div>
+
+                  <div className="form-group">
+                    <button
+                      className="btn btn-login float-right"
+                      onClick={() => {
+                        console.log(this.state.name);
+                        console.log(this.state.email);
+                        console.log(this.state.password);
+                        this.props.onRegister(
+                          this.state.name,
+                          this.state.email,
+                          this.state.password
+                        );
+
+                        this.props.history.push("/");
+                      }}
+                    >
                       Submit
                     </button>
                     <ul
@@ -99,38 +150,6 @@ class Register extends Component {
                         </a>
                       </li>
                     </ul>
-                    <div
-                      className="tab-content pt-2 pl-1"
-                      id="pills-tabContent"
-                    >
-                      <div
-                        className="tab-pane fade show active"
-                        id="pills-home"
-                        role="tabpanel"
-                        aria-labelledby="pills-home-tab"
-                      >
-                        {/* Consequat occaecat ullamco amet non eiusmod nostrud
-                        dolore irure incididunt est duis anim sunt officia.
-                        Fugiat velit proident aliquip nisi incididunt nostrud
-                        exercitation proident est nisi. Irure magna elit commodo
-                        anim ex veniam culpa eiusmod id nostrud sit cupidatat in
-                        veniam ad. Eiusmod consequat eu adipisicing minim anim
-                        aliquip cupidatat culpa excepteur quis. Occaecat sit eu
-                        exercitation irure Lorem incididunt nostrud. */}
-                      </div>
-                      <div
-                        className="tab-pane fade"
-                        id="pills-profile"
-                        role="tabpanel"
-                        aria-labelledby="pills-profile-tab"
-                      />
-                      {/* <div
-                        className="tab-pane fade"
-                        id="pills-contact"
-                        role="tabpanel"
-                        aria-labelledby="pills-contact-tab"
-                      /> */}
-                    </div>
                   </div>
                 </form>
                 <div className="copy-text" />
@@ -165,14 +184,13 @@ class Register extends Component {
                       />
                       <div className="carousel-caption d-none d-md-block">
                         <div className="banner-text">
-                          <h2>Welcome To Service Buzz</h2>
+                          <h2>SERVBUZZ</h2>
                           <p>
-                            Service Buzz is an app that allows a Buzzor to
-                            "buzz" a Buzee for service. Remeber, use Service
-                            Buzz nicely. Buzz unto others as you would wish to
-                            be buzzed upon yourself. Register as a Buzzor(person
-                            recieving service) or a Buzzee(person giving
-                            service).
+                            SERVBUZZ is an app that allows a Buzzor to "buzz" a
+                            Buzee for service. Remember, use Servicebuzz nicely.
+                            Buzz unto others as you would wish to be buzzed upon
+                            yourself. Register as a Buzzor(person recieving
+                            service) or a Buzzee(person giving service).
                           </p>
                         </div>
                       </div>
@@ -185,19 +203,14 @@ class Register extends Component {
                       />
                       <div className="carousel-caption d-none d-md-block">
                         <div className="banner-text">
-                          {
-                            <div className="banner-text">
-                              <h2>Welcome To Service Buzz</h2>
-                              <p>
-                                Service Buzz is an app that allows a Buzzor to
-                                "buzz" a Buzee for service. Remeber, use Service
-                                Buzz nicely. Buzz unto others as you would wish
-                                to be buzzed upon yourself. Register as a
-                                Buzzor(person recieving service) or a
-                                Buzzee(person giving service).
-                              </p>
-                            </div>
-                          }
+                          <h2>SERVBUZZ</h2>
+                          <p>
+                            SERVBUZZ is an app that allows a Buzzor to "buzz" a
+                            Buzee for service. Remember, use Servicebuzz nicely.
+                            Buzz unto others as you would wish to be buzzed upon
+                            yourself. Register as a Buzzor(person recieving
+                            service) or a Buzzee(person giving service).
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -210,17 +223,14 @@ class Register extends Component {
 
                       <div className="carousel-caption d-none d-md-block">
                         <div className="banner-text">
-                          <div className="banner-text">
-                            <h2>Welcome To Service Buzz</h2>
-                            <p>
-                              Service Buzz is an app that allows a Buzzor to
-                              "buzz" a Buzee for service. Remeber, use Service
-                              Buzz nicely. Buzz unto others as you would wish to
-                              be buzzed upon yourself. Register as a
-                              Buzzor(person recieving service) or a
-                              Buzzee(person giving service).
-                            </p>
-                          </div>
+                          <h2>SERVBUZZ</h2>
+                          <p>
+                            SERVBUZZ is an app that allows a Buzzor to "buzz" a
+                            Buzee for service. Remember, use Servicebuzz nicely.
+                            Buzz unto others as you would wish to be buzzed upon
+                            yourself. Register as a Buzzor(person recieving
+                            service) or a Buzzee(person giving service).
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -241,4 +251,7 @@ class Register extends Component {
   }
 }
 
-export default Register;
+export default connect(
+  null,
+  mapDispatchToProps
+)(Register);

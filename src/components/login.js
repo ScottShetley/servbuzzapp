@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { UserLogin } from "../actions/actions";
-import "bootstrap/dist/css/bootstrap.css";
-import "jquery/dist/jquery.js";
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -21,7 +19,7 @@ class Login extends Component {
     };
   }
 
-  handleUserChange = event => {
+  handleEmailChange = event => {
     this.setState({ email: event.target.value });
   };
 
@@ -38,7 +36,7 @@ class Login extends Component {
           <div className="container">
             <div className="row">
               <div className="col-md-4 login-sec">
-                <h2 className="text-center">Login Now</h2>
+                <h2 className="text-center">Login</h2>
                 <div className="login-form">
                   <div className="form-group">
                     <label htmlFor="email" className="text-uppercase">
@@ -46,12 +44,13 @@ class Login extends Component {
                     </label>
 
                     <input
+                      type="email"
                       className="form-control"
+                      placeholder="email"
                       value={this.state.email}
-                      onChange={this.handleUserChange}
+                      onChange={this.handleEmailChange}
                       name="email"
                     />
-                    {this.state.email}
                   </div>
                   <div className="form-group">
                     <label htmlFor="password" className="text-uppercase">
@@ -61,19 +60,22 @@ class Login extends Component {
                     <input
                       className="form-control"
                       type="password"
+                      placeholder="password"
                       value={this.state.password}
                       onChange={this.handlePasswordChange}
                       name="password"
                     />
-                    {this.state.password}
                   </div>
-
+                  <br />
                   <div className="form-check">
                     <label className="form-check-label">
                       <input type="checkbox" className="form-check-input" />
                       <small>Remember Me</small>
                     </label>
                   </div>
+                  <br />
+
+                  <br />
 
                   <button
                     className="btn btn-login float-right"
@@ -87,6 +89,51 @@ class Login extends Component {
                   >
                     Submit
                   </button>
+                  <ul
+                    className="nav nav-pills mb-3"
+                    id="pills-tab"
+                    role="tablist"
+                  >
+                    <li className="nav-item">
+                      <a
+                        className="nav-link active"
+                        id="pills-home-tab"
+                        data-toggle="pill"
+                        href="#pills-home"
+                        role="tab"
+                        aria-controls="pills-home"
+                        aria-selected="true"
+                      >
+                        Buzzee
+                      </a>
+                    </li>
+                    <li className="nav-item">
+                      <a
+                        className="nav-link"
+                        id="pills-profile-tab"
+                        data-toggle="pill"
+                        href="#pills-profile"
+                        role="tab"
+                        aria-controls="pills-profile"
+                        aria-selected="false"
+                      >
+                        Buzzor
+                      </a>
+                    </li>
+                    <li className="nav-item">
+                      <a
+                        className="nav-link"
+                        id="pills-contact-tab"
+                        data-toggle="pill"
+                        href="#pills-contact"
+                        role="tab"
+                        aria-controls="pills-contact"
+                        aria-selected="false"
+                      >
+                        {/* Contact */}
+                      </a>
+                    </li>
+                  </ul>
                 </div>
                 <div className="copy-text" />
               </div>
@@ -120,14 +167,13 @@ class Login extends Component {
                       />
                       <div className="carousel-caption d-none d-md-block">
                         <div className="banner-text">
-                          <h2>Welcome To Service Buzz</h2>
+                          <h2>SERVBUZZ</h2>
                           <p>
-                            Service Buzz is an app that allows a Buzzor to
-                            "buzz" a Buzee for service. Remeber, use Service
-                            Buzz nicely. Buzz unto others as you would wish to
-                            be buzzed upon yourself. Register as a Buzzor(person
-                            recieving service) or a Buzzee(person giving
-                            service).
+                            SERVBUZZ is an app that allows a Buzzor to "buzz" a
+                            Buzee for service. Remember, use Servicebuzz nicely.
+                            Buzz unto others as you would wish to be buzzed upon
+                            yourself. Register as a Buzzor(person recieving
+                            service) or a Buzzee(person giving service).
                           </p>
                         </div>
                       </div>
@@ -140,14 +186,13 @@ class Login extends Component {
                       />
                       <div className="carousel-caption d-none d-md-block">
                         <div className="banner-text">
-                          <h2>Welcome To Service Buzz</h2>
+                          <h2>SERVBUZZ</h2>
                           <p>
-                            Service Buzz is an app that allows a Buzzor to
-                            "buzz" a Buzee for service. Remeber, use Service
-                            Buzz nicely. Buzz unto others as you would wish to
-                            be buzzed upon yourself. Register as a Buzzor(person
-                            recieving service) or a Buzzee(person giving
-                            service).
+                            SERVBUZZ is an app that allows a Buzzor to "buzz" a
+                            Buzee for service. Remeber, use Servicebuzz nicely.
+                            Buzz unto others as you would wish to be buzzed upon
+                            yourself. Register as a Buzzor(person recieving
+                            service) or a Buzzee(person giving service).
                           </p>
                         </div>
                       </div>
@@ -161,14 +206,13 @@ class Login extends Component {
 
                       <div className="carousel-caption d-none d-md-block">
                         <div className="banner-text">
-                          <h2>Welcome To Service Buzz</h2>
+                          <h2>SERVBUZZ</h2>
                           <p>
-                            Service Buzz is an app that allows a Buzzor to
-                            "buzz" a Buzee for service. Remeber, use Service
-                            Buzz nicely. Buzz unto others as you would wish to
-                            be buzzed upon yourself. Register as a Buzzor(person
-                            recieving service) or a Buzzee(person giving
-                            service).
+                            SERVBUZZ is an app that allows a Buzzor to "buzz" a
+                            Buzee for service. Remeber, use Service Buzz nicely.
+                            Buzz unto others as you would wish to be buzzed upon
+                            yourself. Register as a Buzzor(person recieving
+                            service) or a Buzzee(person giving service).
                           </p>
                         </div>
                       </div>
