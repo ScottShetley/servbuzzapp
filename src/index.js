@@ -5,7 +5,7 @@ import "./scott.css";
 import {
   Buzzee,
   Buzzor,
-  Header,
+  Header2,
   Home,
   Login,
   Logout,
@@ -24,8 +24,8 @@ const App = props => (
     <Provider store={store}>
       <Router>
         <div className="text-center">
-          <div className="cover-container d-flex h-100 p-3 mx-auto flex-column">
-            <Header />
+          {/* <div className="cover-container d-flex h-100 p-3 mx-auto flex-column">
+            <Header /> */}
           <div className="cover-container d-flex h-100 mx-auto flex-column">
             <Header2 />
             <main className="inner cover mainSection">
