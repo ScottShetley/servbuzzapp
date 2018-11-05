@@ -202,3 +202,10 @@ p,
     float: none;
   }
 }
+.buzzee {
+  background-color: #93bab9;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
