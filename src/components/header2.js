@@ -16,7 +16,7 @@ const Header2 = props => (
         href="https://fonts.googleapis.com/css?family=Monoton"
         rel="stylesheet"
       />
-      Service Buzz
+      SERVBUZZ
     </NavLink>
     <div className="header-right">
       {props.token === null && (

@@ -75,7 +75,6 @@ class Register extends Component {
                       Password
                     </label>
 
-
                     <input
                       className="form-control"
                       type="password"
@@ -106,6 +105,51 @@ class Register extends Component {
                     >
                       Submit
                     </button>
+                    <ul
+                      className="nav nav-pills mb-3"
+                      id="pills-tab"
+                      role="tablist"
+                    >
+                      <li className="nav-item">
+                        <a
+                          className="nav-link active"
+                          id="pills-home-tab"
+                          data-toggle="pill"
+                          href="#pills-home"
+                          role="tab"
+                          aria-controls="pills-home"
+                          aria-selected="true"
+                        >
+                          Buzzee
+                        </a>
+                      </li>
+                      <li className="nav-item">
+                        <a
+                          className="nav-link"
+                          id="pills-profile-tab"
+                          data-toggle="pill"
+                          href="#pills-profile"
+                          role="tab"
+                          aria-controls="pills-profile"
+                          aria-selected="false"
+                        >
+                          Buzzor
+                        </a>
+                      </li>
+                      <li className="nav-item">
+                        <a
+                          className="nav-link"
+                          id="pills-contact-tab"
+                          data-toggle="pill"
+                          href="#pills-contact"
+                          role="tab"
+                          aria-controls="pills-contact"
+                          aria-selected="false"
+                        >
+                          {/* Contact */}
+                        </a>
+                      </li>
+                    </ul>
                   </div>
                 </form>
                 <div className="copy-text" />
@@ -140,12 +184,13 @@ class Register extends Component {
                       />
                       <div className="carousel-caption d-none d-md-block">
                         <div className="banner-text">
-                          <h2>This is Heaven</h2>
+                          <h2>SERVBUZZ</h2>
                           <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation
+                            SERVBUZZ is an app that allows a Buzzor to "buzz" a
+                            Buzee for service. Remember, use Servicebuzz nicely.
+                            Buzz unto others as you would wish to be buzzed upon
+                            yourself. Register as a Buzzor(person recieving
+                            service) or a Buzzee(person giving service).
                           </p>
                         </div>
                       </div>
@@ -158,12 +203,13 @@ class Register extends Component {
                       />
                       <div className="carousel-caption d-none d-md-block">
                         <div className="banner-text">
-                          <h2>This is Heaven</h2>
+                          <h2>SERVBUZZ</h2>
                           <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation
+                            SERVBUZZ is an app that allows a Buzzor to "buzz" a
+                            Buzee for service. Remember, use Servicebuzz nicely.
+                            Buzz unto others as you would wish to be buzzed upon
+                            yourself. Register as a Buzzor(person recieving
+                            service) or a Buzzee(person giving service).
                           </p>
                         </div>
                       </div>
@@ -177,12 +223,13 @@ class Register extends Component {
 
                       <div className="carousel-caption d-none d-md-block">
                         <div className="banner-text">
-                          <h2>This is Heaven</h2>
+                          <h2>SERVBUZZ</h2>
                           <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation
+                            SERVBUZZ is an app that allows a Buzzor to "buzz" a
+                            Buzee for service. Remember, use Servicebuzz nicely.
+                            Buzz unto others as you would wish to be buzzed upon
+                            yourself. Register as a Buzzor(person recieving
+                            service) or a Buzzee(person giving service).
                           </p>
                         </div>
                       </div>
