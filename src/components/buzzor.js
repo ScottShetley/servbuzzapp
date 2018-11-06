@@ -4,14 +4,19 @@ import Push from "../../node_modules/push.js";
 // check for dynamically importing via module
 
 const Buzzor = props => (
-  <div>
-    <h1 className="cover-heading">buzzor works</h1>
-    <button
-      onClick={() => {
-        Push.create("Buzzor Works");
-      }}
-    >
-      Buzz
+  <div class="flex-container">
+    {/* h1 is unnecessory at this point */}
+    {/* <h1 className="cover-heading">buzzor works</h1> */}
+    <button className="imageButton">
+      <img
+        onClick={() => {
+          Push.create("Buzzor Works");
+        }}
+        alt="Buzzee"
+        src="images\BGresized.png"
+        width="300"
+        height="300"
+      />
     </button>
   </div>
 );
