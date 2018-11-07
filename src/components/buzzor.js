@@ -4,7 +4,7 @@ import Push from "../../node_modules/push.js";
 // check for dynamically importing via module
 
 const Buzzor = props => (
-  <div class="flex-container">
+  <div className="flex-container">
     {/* h1 is unnecessory at this point */}
     {/* <h1 className="cover-heading">buzzor works</h1> */}
     <button className="imageButton">
@@ -12,12 +12,10 @@ const Buzzor = props => (
         onClick={() => {
           Push.create("Buzzor Works");
         }}
-        alt="Buzzee"
+        alt="Buzzor"
         src="images\Servicebutton.png"
         width="600"
         height="600"
-        
-        
       />
     </button>
   </div>
