@@ -210,7 +210,7 @@ p,
   text-align: center;
 } */
 .flex-container {
-  height: 1000px;
+  height: 1200px;
   padding: 0;
   margin: 0;
   display: -webkit-box;
@@ -220,6 +220,7 @@ p,
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
 .mainSection {
   height: 100%;
@@ -237,11 +238,9 @@ p,
 .imageButton {
   background: none;
   border: 0;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-  border-radius: 50%
-  
+  /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  border-radius: 50% */
 }
-.imageButton :active{
+.imageButton :active {
   transform: translateY(4px);
-  
 }
