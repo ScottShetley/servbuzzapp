@@ -42,7 +42,7 @@ class Register extends Component {
                 <form className="login-form">
                   <div className="form-group">
                     <label htmlFor="name" className="text-uppercase">
-                      Name
+                      Email
                     </label>
 
                     <input
@@ -57,7 +57,7 @@ class Register extends Component {
 
                   <div className="form-group">
                     <label htmlFor="email" className="text-uppercase">
-                      Email
+                      Password
                     </label>
 
                     <input
@@ -72,7 +72,7 @@ class Register extends Component {
 
                   <div className="form-group">
                     <label htmlFor="password" className="text-uppercase">
-                      Password
+                      Confirm Password
                     </label>
 
                     <input
