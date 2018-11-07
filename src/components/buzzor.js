@@ -13,9 +13,10 @@ const Buzzor = props => (
           Push.create("Buzzor Works");
         }}
         alt="Buzzee"
-        src="images\BGresized.png"
-        width="300"
-        height="300"
+        src="images\buzztan2.png"
+        width="400"
+        height="400"
+        
       />
     </button>
   </div>
