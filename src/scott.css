@@ -25,8 +25,8 @@ p,
   background-size: 100%; */
   /* image-rendering: crisp-edges; */
   /* image-rendering: pixelated; */
-  float: left;
-  width: 100%;
+  width: auto;
+  margin: auto;
   padding: 50px 0;
   height: auto;
 }
@@ -36,11 +36,7 @@ p,
   border-radius: 0 10px 10px 0;
   padding: 0;
 }
-.container {
-  background: #d5c9bd;
-  border-radius: 10px;
-  box-shadow: 15px 20px 0px rgba(0, 0, 0, 0.5);
-}
+
 .carousel-inner > .item {
   border-radius: 0 10px 10px 0;
 }
@@ -48,17 +44,23 @@ p,
   text-align: left;
   left: 5%;
 }
+.container {
+  background: #d5c9bd;
+  border-radius: 10px;
+  width: auto;
+  box-shadow: 15px 20px 0px rgba(0, 0, 0, 0.5);
+}
 .login-sec {
   padding: 50px 30px;
   position: relative;
 }
-.login-sec .copy-text {
+/* .login-sec .copy-text {
   position: absolute;
   width: 80%;
   bottom: 20px;
   font-size: 13px;
   text-align: center;
-}
+} */
 .login-sec .copy-text i {
   color: #883d39;
 }
