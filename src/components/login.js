@@ -33,9 +33,11 @@ class Login extends Component {
 
       <div>
         <section className="login-block">
-          <div className="container">
+        <div className="col-1"/>
+          <div className="col-10 container">
             <div className="row">
-              <div className="col-md-4 login-sec">
+              <div className="col-sm-1"/>
+              <div className="col-sm-10 login-sec">
                 <h2 className="text-center">Login</h2>
                 <div className="login-form">
                   <div className="form-group">
@@ -76,7 +78,6 @@ class Login extends Component {
                   <br />
 
                   <br />
-
                   <button
                     className="btn btn-login float-right"
                     onClick={() => {
@@ -120,196 +121,19 @@ class Login extends Component {
                         Buzzor
                       </a>
                     </li>
-                    <li className="nav-item">
-                      <a
-                        className="nav-link"
-                        id="pills-contact-tab"
-                        data-toggle="pill"
-                        href="#pills-contact"
-                        role="tab"
-                        aria-controls="pills-contact"
-                        aria-selected="false"
-                      >
-                        {/* Contact */}
-                      </a>
-                    </li>
                   </ul>
                 </div>
                 <div className="copy-text" />
               </div>
-              <div className="col-md-8 banner-sec">
-                <div
-                  id="carouselExampleIndicators"
-                  className="carousel slide"
-                  data-ride="carousel"
-                >
-                  <ol className="carousel-indicators">
-                    <li
-                      data-target="#carouselExampleIndicators"
-                      data-slide-to="0"
-                      className="active"
-                    />
-                    <li
-                      data-target="#carouselExampleIndicators"
-                      data-slide-to="1"
-                    />
-                    <li
-                      data-target="#carouselExampleIndicators"
-                      data-slide-to="2"
-                    />
-                  </ol>
-                  <div className="carousel-inner" role="listbox">
-                    <div className="carousel-item active">
-                      <img
-                        className="d-block img-fluid"
-                        src="images\food-salad-restaurant-person.jpg"
-                        alt="First slide"
-                      />
-                      <div className="carousel-caption d-none d-md-block">
-                        <div className="banner-text">
-                          <h2>SERVBUZZ</h2>
-                          <p>
-                            SERVBUZZ is an app that allows a Buzzor to "buzz" a
-                            Buzee for service. Remember, use Servicebuzz nicely.
-                            Buzz unto others as you would wish to be buzzed upon
-                            yourself. Register as a Buzzor(person recieving
-                            service) or a Buzzee(person giving service).
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="carousel-item">
-                      <img
-                        className="d-block img-fluid"
-                        src="images\menu-restaurant-vintage-table.jpg"
-                        alt="Second slide"
-                      />
-                      <div className="carousel-caption d-none d-md-block">
-                        <div className="banner-text">
-                          <h2>SERVBUZZ</h2>
-                          <p>
-                            SERVBUZZ is an app that allows a Buzzor to "buzz" a
-                            Buzee for service. Remeber, use Servicebuzz nicely.
-                            Buzz unto others as you would wish to be buzzed upon
-                            yourself. Register as a Buzzor(person recieving
-                            service) or a Buzzee(person giving service).
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="carousel-item">
-                      <img
-                        className="d-block img-fluid"
-                        src="images\pexels-photo-1332191.jpeg"
-                        alt="Third slide"
-                      />
-
-                      <div className="carousel-caption d-none d-md-block">
-                        <div className="banner-text">
-                          <h2>SERVBUZZ</h2>
-                          <p>
-                            SERVBUZZ is an app that allows a Buzzor to "buzz" a
-                            Buzee for service. Remeber, use Service Buzz nicely.
-                            Buzz unto others as you would wish to be buzzed upon
-                            yourself. Register as a Buzzor(person recieving
-                            service) or a Buzzee(person giving service).
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <div className="col-sm-1"/>
             </div>
           </div>
+          <div className="col-1"/>
         </section>
       </div>
-
-      //this is a backup of the previous code. attempting to import scott's code above
-
-      // <div>
-      //   <h3>Login</h3>
-      //   <div className="form-group">
-      // <input
-      //   className="form-control"
-      //   placeholder="username"
-      //   value={this.state.username}
-      //   onChange={this.handleUserChange}
-      //   name="username"
-      // />
-      //     {this.state.username}
-      //   </div>
-      //   <div className="form-group">
-      //     <input
-      //       className="form-control"
-      //       placeholder="password"
-      //       value={this.state.password}
-      //       onChange={this.handlePasswordChange}
-      //       name="password"
-      //     />
-      //     {this.state.password}
-      //   </div>
-      //   <div className="form-group">
-      //     <button
-      //       className="btn btn-default"
-      //       onClick={() => {
-      //         console.log(this.state.username);
-      //         console.log(this.state.password);
-
-      //         this.props.onLogin(this.state.username, this.state.password);
-      //         this.props.history.push("/");
-      //       }}
-      //     >
-      //       Submit
-      //     </button>
-      //   </div>
-      // </div>
     );
   }
 }
-
-//this is the stateless component
-
-// const Login = props => {
-//   let username;
-//   let password;
-//   return (
-//     <div>
-//       <h3>Login</h3>
-//       <div className="form-group">
-//         <input
-//           className="form-control"
-//           placeholder="username"
-//           ref={u => {
-//             username = u;
-//           }}
-//         />
-//       </div>
-//       <div className="form-group">
-//         <input
-//           className="form-control"
-//           placeholder="password"
-//           ref={p => {
-//             password = p;
-//           }}
-//         />
-//       </div>
-//       <div className="form-group">
-//         <button
-//           className="btn btn-default"
-//           onClick={() => {
-//             props.onLogin(username.value, password.value);
-//             props.history.push("/");
-//           }}
-//         >
-//           Submit
-//         </button>
-//       </div>
-//     </div>
-//   );
-// };
-
-//this did not change
 
 export default connect(
   null,
