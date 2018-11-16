@@ -4,8 +4,8 @@ import { UserRegister } from "../actions/actions";
 
 const mapDispatchToProps = dispatch => {
   return {
-    onRegister: (name, email, password) =>
-      dispatch(UserRegister(name, email, password))
+    onRegister: (email, password, table) =>
+      dispatch(UserRegister(email, password, table))
   };
 };
 
@@ -13,48 +13,28 @@ class Register extends Component {
   constructor() {
     super();
     this.state = {
-      name: "",
       email: "",
       password: "",
-      errors: {}
+      table: "",
+      role: 0
     };
   }
-  handleNameChange = event => {
-    this.setState({ name: event.target.value });
-  };
 
-  handleEmailChange = event => {
-    this.setState({ email: event.target.value });
-  };
-
-  handlePasswordChange = event => {
-    this.setState({ password: event.target.value });
+  handleChange = event => {
+    this.setState({ [event.target.name]: event.target.value });
   };
 
   render() {
     return (
       <div>
         <section className="login-block">
-          <div className="container">
+          <div className="col-1" />
+          <div className="col-10 container">
             <div className="row">
-              <div className="col-md-4 login-sec">
+              <div className="col-sm-1" />
+              <div className="col-sm-10 login-sec">
                 <h2 className="text-center">Register</h2>
                 <form className="login-form">
-                  <div className="form-group">
-                    <label htmlFor="name" className="text-uppercase">
-                      Name
-                    </label>
-
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder="Name"
-                      value={this.state.name}
-                      onChange={this.handleNameChange}
-                      name="name"
-                    />
-                  </div>
-
                   <div className="form-group">
                     <label htmlFor="email" className="text-uppercase">
                       Email
@@ -63,9 +43,9 @@ class Register extends Component {
                     <input
                       type="text"
                       className="form-control"
-                      placeholder="Email"
+                      placeholder="email"
                       value={this.state.email}
-                      onChange={this.handleEmailChange}
+                      onChange={this.handleChange}
                       name="email"
                     />
                   </div>
@@ -77,13 +57,38 @@ class Register extends Component {
 
                     <input
                       className="form-control"
+                      placeholder="password"
                       type="password"
                       value={this.state.password}
-                      onChange={this.handlePasswordChange}
+                      onChange={this.handleChange}
                       name="password"
-                      // onChange={() => {
-                      //   //verification part - confirm password
-                      // }}
+                    />
+                  </div>
+
+                  <div className="form-group">
+                    <label htmlFor="confirmPassword" className="text-uppercase">
+                      Confirm Password
+                    </label>
+                    <input
+                      className="form-control"
+                      placeholder="confirm password"
+                      type="password"
+                      onChange={this.handleChange}
+                    />
+                  </div>
+
+                  <div className="form-group">
+                    <label htmlFor="table" className="text-uppercase">
+                      Table
+                    </label>
+
+                    <input
+                      className="form-control"
+                      type="text"
+                      placeholder="table"
+                      value={this.state.table}
+                      onChange={this.handleChange}
+                      name="table"
                     />
                   </div>
 
@@ -91,25 +96,17 @@ class Register extends Component {
                     <button
                       className="btn btn-login float-right"
                       onClick={() => {
-                        console.log(this.state.name);
-                        console.log(this.state.email);
-                        console.log(this.state.password);
                         this.props.onRegister(
-                          this.state.name,
                           this.state.email,
-                          this.state.password
+                          this.state.password,
+                          this.state.table
                         );
-
                         this.props.history.push("/");
                       }}
                     >
                       Submit
                     </button>
-                    <ul
-                      className="nav nav-pills mb-3"
-                      id="pills-tab"
-                      role="tablist"
-                    >
+                    <ul className="nav nav-pills" id="pills-tab" role="tablist">
                       <li className="nav-item">
                         <a
                           className="nav-link active"
@@ -120,7 +117,8 @@ class Register extends Component {
                           aria-controls="pills-home"
                           aria-selected="true"
                         >
-                          Buzzee
+                          {/* changed the button text so that buzzor is default */}
+                          Buzzor
                         </a>
                       </li>
                       <li className="nav-item">
@@ -133,20 +131,7 @@ class Register extends Component {
                           aria-controls="pills-profile"
                           aria-selected="false"
                         >
-                          Buzzor
-                        </a>
-                      </li>
-                      <li className="nav-item">
-                        <a
-                          className="nav-link"
-                          id="pills-contact-tab"
-                          data-toggle="pill"
-                          href="#pills-contact"
-                          role="tab"
-                          aria-controls="pills-contact"
-                          aria-selected="false"
-                        >
-                          {/* Contact */}
+                          Buzzee
                         </a>
                       </li>
                     </ul>
@@ -154,99 +139,12 @@ class Register extends Component {
                 </form>
                 <div className="copy-text" />
               </div>
-              <div className="col-md-8 banner-sec">
-                <div
-                  id="carouselExampleIndicators"
-                  className="carousel slide"
-                  data-ride="carousel"
-                >
-                  <ol className="carousel-indicators">
-                    <li
-                      data-target="#carouselExampleIndicators"
-                      data-slide-to="0"
-                      className="active"
-                    />
-                    <li
-                      data-target="#carouselExampleIndicators"
-                      data-slide-to="1"
-                    />
-                    <li
-                      data-target="#carouselExampleIndicators"
-                      data-slide-to="2"
-                    />
-                  </ol>
-                  <div className="carousel-inner" role="listbox">
-                    <div className="carousel-item active">
-                      <img
-                        className="d-block img-fluid"
-                        src="images\food-salad-restaurant-person.jpg"
-                        alt="First slide"
-                      />
-                      <div className="carousel-caption d-none d-md-block">
-                        <div className="banner-text">
-                          <h2>SERVBUZZ</h2>
-                          <p>
-                            SERVBUZZ is an app that allows a Buzzor to "buzz" a
-                            Buzee for service. Remember, use Servicebuzz nicely.
-                            Buzz unto others as you would wish to be buzzed upon
-                            yourself. Register as a Buzzor(person recieving
-                            service) or a Buzzee(person giving service).
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="carousel-item">
-                      <img
-                        className="d-block img-fluid"
-                        src="images\menu-restaurant-vintage-table.jpg"
-                        alt="Second slide"
-                      />
-                      <div className="carousel-caption d-none d-md-block">
-                        <div className="banner-text">
-                          <h2>SERVBUZZ</h2>
-                          <p>
-                            SERVBUZZ is an app that allows a Buzzor to "buzz" a
-                            Buzee for service. Remember, use Servicebuzz nicely.
-                            Buzz unto others as you would wish to be buzzed upon
-                            yourself. Register as a Buzzor(person recieving
-                            service) or a Buzzee(person giving service).
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="carousel-item">
-                      <img
-                        className="d-block img-fluid"
-                        src="images\pexels-photo-1332191.jpeg"
-                        alt="Third slide"
-                      />
-
-                      <div className="carousel-caption d-none d-md-block">
-                        <div className="banner-text">
-                          <h2>SERVBUZZ</h2>
-                          <p>
-                            SERVBUZZ is an app that allows a Buzzor to "buzz" a
-                            Buzee for service. Remember, use Servicebuzz nicely.
-                            Buzz unto others as you would wish to be buzzed upon
-                            yourself. Register as a Buzzor(person recieving
-                            service) or a Buzzee(person giving service).
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <div className="col-sm-1" />
             </div>
           </div>
+          <div className="col-sm-1" />
         </section>
       </div>
-
-      // placeholder stuff
-      // <div>
-      //   <h1 className="cover-heading">Register</h1>
-      //   <p className="lead">lorem ipsum</p>
-      // </div>
     );
   }
 }
