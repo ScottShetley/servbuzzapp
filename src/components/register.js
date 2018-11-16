@@ -74,6 +74,7 @@ class Register extends Component {
                       placeholder="confirm password"
                       type="password"
                       onChange={this.handleChange}
+                      name="confirmPassword"
                     />
                   </div>
 
