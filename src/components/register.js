@@ -15,6 +15,7 @@ class Register extends Component {
     this.state = {
       email: "",
       password: "",
+      passwordConf: "",
       table: "",
       role: 0
     };
@@ -26,13 +27,20 @@ class Register extends Component {
   handlePasswordChange = event => {
     this.setState({ password: event.target.value });
   };
+  handlePasswordConfChange = event => {
+    this.setState({ passwordConf: event.target.value });
+  };
   handleTableChange = event => {
     this.setState({ table: event.target.value });
   };
 
   render() {
-    const { email, password } = this.state;
-    const isEnabled = email.length > 0 && password.length > 0;
+    const { email, password, passwordConf, table } = this.state;
+    const isEnabled =
+      email.length > 0 &&
+      password.length > 0 &&
+      table.length > 0 &&
+      passwordConf.length > 0;
     return (
       <div>
         <section className="login-block">
@@ -81,7 +89,7 @@ class Register extends Component {
                       className="form-control"
                       placeholder="confirm password"
                       type="password"
-                      onChange={this.handlePasswordChange}
+                      onChange={this.handlePasswordConfChange}
                     />
                   </div>
 

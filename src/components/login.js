@@ -31,8 +31,9 @@ class Login extends Component {
   };
 
   render() {
-    const { email, password } = this.state;
-    const isEnabled = email.length > 0 && password.length > 0;
+    const { email, password, table } = this.state;
+    const isEnabled =
+      email.length > 0 && password.length > 0 && table.length > 0;
     return (
       <div>
         <section className="login-block">
