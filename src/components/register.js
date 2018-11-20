@@ -20,11 +20,19 @@ class Register extends Component {
     };
   }
 
-  handleChange = event => {
-    this.setState({ [event.target.name]: event.target.value });
+  handleEmailChange = event => {
+    this.setState({ email: event.target.value });
+  };
+  handlePasswordChange = event => {
+    this.setState({ password: event.target.value });
+  };
+  handleTableChange = event => {
+    this.setState({ table: event.target.value });
   };
 
   render() {
+    const { email, password } = this.state;
+    const isEnabled = email.length > 0 && password.length > 0;
     return (
       <div>
         <section className="login-block">
@@ -45,7 +53,7 @@ class Register extends Component {
                       className="form-control"
                       placeholder="email"
                       value={this.state.email}
-                      onChange={this.handleChange}
+                      onChange={this.handleEmailChange}
                       name="email"
                     />
                   </div>
@@ -60,7 +68,7 @@ class Register extends Component {
                       placeholder="password"
                       type="password"
                       value={this.state.password}
-                      onChange={this.handleChange}
+                      onChange={this.handlePasswordChange}
                       name="password"
                     />
                   </div>
@@ -73,7 +81,7 @@ class Register extends Component {
                       className="form-control"
                       placeholder="confirm password"
                       type="password"
-                      onChange={this.handleChange}
+                      onChange={this.handlePasswordChange}
                     />
                   </div>
 
@@ -87,13 +95,14 @@ class Register extends Component {
                       type="text"
                       placeholder="table"
                       value={this.state.table}
-                      onChange={this.handleChange}
+                      onChange={this.handleTableChange}
                       name="table"
                     />
                   </div>
 
                   <div className="form-group">
                     <button
+                      disabled={!isEnabled}
                       className="btn btn-login float-right"
                       onClick={() => {
                         this.props.onRegister(
