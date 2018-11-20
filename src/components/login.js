@@ -4,54 +4,59 @@ import { UserLogin } from "../actions/actions";
 
 const mapDispatchToProps = dispatch => {
   return {
-    onLogin: (email, password) => dispatch(UserLogin(email, password))
+    onLogin: (email, password, table) =>
+      dispatch(UserLogin(email, password, table))
   };
 };
-
-//this is a transition to stateful
 
 class Login extends Component {
   constructor() {
     super();
     this.state = {
       email: "",
-      password: ""
+      password: "",
+      table: "",
+      role: 0
     };
   }
 
   handleEmailChange = event => {
     this.setState({ email: event.target.value });
   };
-
   handlePasswordChange = event => {
     this.setState({ password: event.target.value });
   };
+  handleTableChange = event => {
+    this.setState({ table: event.target.value });
+  };
 
   render() {
+    const { email, password } = this.state;
+    const isEnabled = email.length > 0 && password.length > 0;
     return (
-      //scotts template
-
       <div>
         <section className="login-block">
-          <div className="container">
+          <div className="col-1" />
+          <div className="col-10 container">
             <div className="row">
-              <div className="col-md-4 login-sec">
-                <h2 className="text-center">Login Now</h2>
+              <div className="col-sm-1" />
+              <div className="col-sm-10 login-sec">
+                <h2 className="text-center">Login</h2>
                 <div className="login-form">
                   <div className="form-group">
                     <label htmlFor="email" className="text-uppercase">
                       Email
                     </label>
 
+                    {/* <form onSubmit={this.handleSubmit}> */}
                     <input
-                      type="email"
+                      type="text"
                       className="form-control"
                       placeholder="email"
                       value={this.state.email}
                       onChange={this.handleEmailChange}
                       name="email"
                     />
-
                   </div>
                   <div className="form-group">
                     <label htmlFor="password" className="text-uppercase">
@@ -66,46 +71,88 @@ class Login extends Component {
                       onChange={this.handlePasswordChange}
                       name="password"
                     />
-
                   </div>
-                  <br />
-                  <div className="form-check">
-                    <label className="form-check-label">
-                      <input type="checkbox" className="form-check-input" />
-                      <small>Remember Me</small>
+                  <div className="form-group">
+                    <label htmlFor="table" className="text-uppercase">
+                      Table
                     </label>
-                  </div>
-                  <br />
-                  <br />
 
+                    <input
+                      className="form-control"
+                      type="text"
+                      placeholder="table"
+                      value={this.state.table}
+                      onChange={this.handleTableChange}
+                      name="table"
+                    />
+                  </div>
+                  {/* <button disabled={!isEnabled} /> */}
+
+                  <br />
+                  <br />
+                  <br />
                   <button
+                    disabled={!isEnabled}
                     className="btn btn-login float-right"
                     onClick={() => {
-                      console.log(this.state.email);
-                      console.log(this.state.password);
-                      this.props.onLogin(this.state.email, this.state.password);
-
+                      function storageAvailable(type) {
+                        try {
+                          var storage = window[type],
+                            x = "__storage_test__";
+                          storage.setItem(x, x);
+                          storage.removeItem(x);
+                          return true;
+                        } catch (e) {
+                          return (
+                            e instanceof DOMException &&
+                            // everything except Firefox
+                            (e.code === 22 ||
+                              // Firefox
+                              e.code === 1014 ||
+                              // test name field too, because code might not be present
+                              // everything except Firefox
+                              e.name === "QuotaExceededError" ||
+                              // Firefox
+                              e.name === "NS_ERROR_DOM_QUOTA_REACHED") &&
+                            // acknowledge QuotaExceededError only if there's something already stored
+                            storage.length !== 0
+                          );
+                        }
+                      }
+                      if (storageAvailable("localStorage")) {
+                        // Yippee! We can use localStorage awesomeness
+                        console.log("Yippee!");
+                      } else {
+                        // Too bad, no localStorage for us
+                        console.log("Awww!");
+                      }
+                      console.log(this.state.table);
+                      this.props.onLogin(
+                        this.state.email,
+                        this.state.password,
+                        this.state.table
+                      );
                       this.props.history.push("/");
                     }}
+                    onFocus={() => {}}
                   >
+                    {" "}
                     Submit
                   </button>
-                  <ul
-                    className="nav nav-pills mb-3"
-                    id="pills-tab"
-                    role="tablist"
-                  >
+
+                  <ul className="nav nav-pills" id="pills-tab" role="tablist">
                     <li className="nav-item">
                       <a
                         className="nav-link active"
                         id="pills-home-tab"
                         data-toggle="pill"
-                        href="#pills-home"
+                        href="/buzzor"
                         role="tab"
                         aria-controls="pills-home"
                         aria-selected="true"
                       >
-                        Buzzee
+                        {/* changed the button text so that buzzor is default */}
+                        Buzzor
                       </a>
                     </li>
                     <li className="nav-item">
@@ -113,207 +160,26 @@ class Login extends Component {
                         className="nav-link"
                         id="pills-profile-tab"
                         data-toggle="pill"
-                        href="#pills-profile"
+                        href="/buzee"
                         role="tab"
                         aria-controls="pills-profile"
                         aria-selected="false"
                       >
-                        Buzzor
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a
-                        className="nav-link"
-                        id="pills-contact-tab"
-                        data-toggle="pill"
-                        href="#pills-contact"
-                        role="tab"
-                        aria-controls="pills-contact"
-                        aria-selected="false"
-                      >
-                        {/* Contact */}
+                        Buzzee
                       </a>
                     </li>
                   </ul>
                 </div>
-                <div className="copy-text" />
               </div>
-              <div className="col-md-8 banner-sec">
-                <div
-                  id="carouselExampleIndicators"
-                  className="carousel slide"
-                  data-ride="carousel"
-                >
-                  <ol className="carousel-indicators">
-                    <li
-                      data-target="#carouselExampleIndicators"
-                      data-slide-to="0"
-                      className="active"
-                    />
-                    <li
-                      data-target="#carouselExampleIndicators"
-                      data-slide-to="1"
-                    />
-                    <li
-                      data-target="#carouselExampleIndicators"
-                      data-slide-to="2"
-                    />
-                  </ol>
-                  <div className="carousel-inner" role="listbox">
-                    <div className="carousel-item active">
-                      <img
-                        className="d-block img-fluid"
-                        src="images\food-salad-restaurant-person.jpg"
-                        alt="First slide"
-                      />
-                      <div className="carousel-caption d-none d-md-block">
-                        <div className="banner-text">
-                          <h2>Welcome To Service Buzz</h2>
-                          <p>
-                            Servicebuzz is an app that allows a Buzzor to "buzz"
-                            a Buzee for service. Remember, use Servicebuzz
-                            nicely. Buzz unto others as you would wish to be
-                            buzzed upon yourself. Register as a Buzzor(person
-                            recieving service) or a Buzzee(person giving
-                            service).
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="carousel-item">
-                      <img
-                        className="d-block img-fluid"
-                        src="images\menu-restaurant-vintage-table.jpg"
-                        alt="Second slide"
-                      />
-                      <div className="carousel-caption d-none d-md-block">
-                        <div className="banner-text">
-                          <h2>Welcome To Service Buzz</h2>
-                          <p>
-                            Servicebuzz is an app that allows a Buzzor to "buzz"
-                            a Buzee for service. Remeber, use Servicebuzz
-                            nicely. Buzz unto others as you would wish to be
-                            buzzed upon yourself. Register as a Buzzor(person
-                            recieving service) or a Buzzee(person giving
-                            service).
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="carousel-item">
-                      <img
-                        className="d-block img-fluid"
-                        src="images\pexels-photo-1332191.jpeg"
-                        alt="Third slide"
-                      />
-
-                      <div className="carousel-caption d-none d-md-block">
-                        <div className="banner-text">
-                          <h2>Welcome To Service Buzz</h2>
-                          <p>
-                            Service Buzz is an app that allows a Buzzor to
-                            "buzz" a Buzee for service. Remeber, use Service
-                            Buzz nicely. Buzz unto others as you would wish to
-                            be buzzed upon yourself. Register as a Buzzor(person
-                            recieving service) or a Buzzee(person giving
-                            service).
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <div className="col-sm-1" />
             </div>
           </div>
+          <div className="col-1" />
         </section>
       </div>
-
-      //this is a backup of the previous code. attempting to import scott's code above
-
-      // <div>
-      //   <h3>Login</h3>
-      //   <div className="form-group">
-      // <input
-      //   className="form-control"
-      //   placeholder="username"
-      //   value={this.state.username}
-      //   onChange={this.handleUserChange}
-      //   name="username"
-      // />
-      //     {this.state.username}
-      //   </div>
-      //   <div className="form-group">
-      //     <input
-      //       className="form-control"
-      //       placeholder="password"
-      //       value={this.state.password}
-      //       onChange={this.handlePasswordChange}
-      //       name="password"
-      //     />
-      //     {this.state.password}
-      //   </div>
-      //   <div className="form-group">
-      //     <button
-      //       className="btn btn-default"
-      //       onClick={() => {
-      //         console.log(this.state.username);
-      //         console.log(this.state.password);
-
-      //         this.props.onLogin(this.state.username, this.state.password);
-      //         this.props.history.push("/");
-      //       }}
-      //     >
-      //       Submit
-      //     </button>
-      //   </div>
-      // </div>
     );
   }
 }
-
-//this is the stateless component
-
-// const Login = props => {
-//   let username;
-//   let password;
-//   return (
-//     <div>
-//       <h3>Login</h3>
-//       <div className="form-group">
-//         <input
-//           className="form-control"
-//           placeholder="username"
-//           ref={u => {
-//             username = u;
-//           }}
-//         />
-//       </div>
-//       <div className="form-group">
-//         <input
-//           className="form-control"
-//           placeholder="password"
-//           ref={p => {
-//             password = p;
-//           }}
-//         />
-//       </div>
-//       <div className="form-group">
-//         <button
-//           className="btn btn-default"
-//           onClick={() => {
-//             props.onLogin(username.value, password.value);
-//             props.history.push("/");
-//           }}
-//         >
-//           Submit
-//         </button>
-//       </div>
-//     </div>
-//   );
-// };
-
-//this did not change
 
 export default connect(
   null,

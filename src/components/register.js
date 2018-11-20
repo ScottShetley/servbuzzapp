@@ -4,8 +4,8 @@ import { UserRegister } from "../actions/actions";
 
 const mapDispatchToProps = dispatch => {
   return {
-    onRegister: (name, email, password) =>
-      dispatch(UserRegister(name, email, password))
+    onRegister: (email, password, table) =>
+      dispatch(UserRegister(email, password, table))
   };
 };
 
@@ -13,57 +13,28 @@ class Register extends Component {
   constructor() {
     super();
     this.state = {
-      name: "",
       email: "",
       password: "",
-      errors: {}
+      table: "",
+      role: 0
     };
   }
-  handleNameChange = event => {
-    this.setState({ name: event.target.value });
-  };
 
-  handleEmailChange = event => {
-    this.setState({ email: event.target.value });
-  };
-
-  handlePasswordChange = event => {
-    this.setState({ password: event.target.value });
+  handleChange = event => {
+    this.setState({ [event.target.name]: event.target.value });
   };
 
   render() {
     return (
       <div>
-        {/* <head>
-          <link
-            href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
-            rel="stylesheet"
-            id="bootstrap-css"
-          />
-          <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" />
-          <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" />
-        </head> */}
         <section className="login-block">
-          <div className="container">
+          <div className="col-1" />
+          <div className="col-10 container">
             <div className="row">
-              <div className="col-md-4 login-sec">
-                <h2 className="text-center">Register Now</h2>
+              <div className="col-sm-1" />
+              <div className="col-sm-10 login-sec">
+                <h2 className="text-center">Register</h2>
                 <form className="login-form">
-                  <div className="form-group">
-                    <label htmlFor="name" className="text-uppercase">
-                      Name
-                    </label>
-
-                    <input
-                      type="text"
-                      className="form-control"
-                      placeholder="Name"
-                      value={this.state.name}
-                      onChange={this.handleNameChange}
-                      name="name"
-                    />
-                  </div>
-
                   <div className="form-group">
                     <label htmlFor="email" className="text-uppercase">
                       Email
@@ -72,9 +43,9 @@ class Register extends Component {
                     <input
                       type="text"
                       className="form-control"
-                      placeholder="Email"
+                      placeholder="email"
                       value={this.state.email}
-                      onChange={this.handleEmailChange}
+                      onChange={this.handleChange}
                       name="email"
                     />
                   </div>
@@ -84,16 +55,40 @@ class Register extends Component {
                       Password
                     </label>
 
+                    <input
+                      className="form-control"
+                      placeholder="password"
+                      type="password"
+                      value={this.state.password}
+                      onChange={this.handleChange}
+                      name="password"
+                    />
+                  </div>
+
+                  <div className="form-group">
+                    <label htmlFor="confirmPassword" className="text-uppercase">
+                      Confirm Password
+                    </label>
+                    <input
+                      className="form-control"
+                      placeholder="confirm password"
+                      type="password"
+                      onChange={this.handleChange}
+                    />
+                  </div>
+
+                  <div className="form-group">
+                    <label htmlFor="table" className="text-uppercase">
+                      Table
+                    </label>
 
                     <input
                       className="form-control"
-                      type="password"
-                      value={this.state.password}
-                      onChange={this.handlePasswordChange}
-                      name="password"
-                      // onChange={() => {
-                      //   //verification part - confirm password
-                      // }}
+                      type="text"
+                      placeholder="table"
+                      value={this.state.table}
+                      onChange={this.handleChange}
+                      name="table"
                     />
                   </div>
 
@@ -101,114 +96,55 @@ class Register extends Component {
                     <button
                       className="btn btn-login float-right"
                       onClick={() => {
-                        console.log(this.state.name);
-                        console.log(this.state.email);
-                        console.log(this.state.password);
                         this.props.onRegister(
-                          this.state.name,
                           this.state.email,
-                          this.state.password
+                          this.state.password,
+                          this.state.table
                         );
-
-                        this.props.history.push("/");
+                        this.props.history.push("/login");
                       }}
                     >
                       Submit
                     </button>
+                    <ul className="nav nav-pills" id="pills-tab" role="tablist">
+                      <li className="nav-item">
+                        <a
+                          className="nav-link active"
+                          id="pills-home-tab"
+                          data-toggle="pill"
+                          href="#pills-home"
+                          role="tab"
+                          aria-controls="pills-home"
+                          aria-selected="true"
+                        >
+                          {/* changed the button text so that buzzor is default */}
+                          Buzzor
+                        </a>
+                      </li>
+                      <li className="nav-item">
+                        <a
+                          className="nav-link"
+                          id="pills-profile-tab"
+                          data-toggle="pill"
+                          href="#pills-profile"
+                          role="tab"
+                          aria-controls="pills-profile"
+                          aria-selected="false"
+                        >
+                          Buzzee
+                        </a>
+                      </li>
+                    </ul>
                   </div>
                 </form>
                 <div className="copy-text" />
               </div>
-              <div className="col-md-8 banner-sec">
-                <div
-                  id="carouselExampleIndicators"
-                  className="carousel slide"
-                  data-ride="carousel"
-                >
-                  <ol className="carousel-indicators">
-                    <li
-                      data-target="#carouselExampleIndicators"
-                      data-slide-to="0"
-                      className="active"
-                    />
-                    <li
-                      data-target="#carouselExampleIndicators"
-                      data-slide-to="1"
-                    />
-                    <li
-                      data-target="#carouselExampleIndicators"
-                      data-slide-to="2"
-                    />
-                  </ol>
-                  <div className="carousel-inner" role="listbox">
-                    <div className="carousel-item active">
-                      <img
-                        className="d-block img-fluid"
-                        src="images\food-salad-restaurant-person.jpg"
-                        alt="First slide"
-                      />
-                      <div className="carousel-caption d-none d-md-block">
-                        <div className="banner-text">
-                          {/* <h2>This is Heaven</h2> */}
-                          {/* <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation
-                          </p> */}
-                        </div>
-                      </div>
-                    </div>
-                    <div className="carousel-item">
-                      <img
-                        className="d-block img-fluid"
-                        src="images\menu-restaurant-vintage-table.jpg"
-                        alt="Second slide"
-                      />
-                      <div className="carousel-caption d-none d-md-block">
-                        <div className="banner-text">
-                          {/* <h2>This is Heaven</h2>
-                          <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation
-                          </p> */}
-                        </div>
-                      </div>
-                    </div>
-                    <div className="carousel-item">
-                      <img
-                        className="d-block img-fluid"
-                        src="images\pexels-photo-1332191.jpeg"
-                        alt="Third slide"
-                      />
-
-                      <div className="carousel-caption d-none d-md-block">
-                        <div className="banner-text">
-                          {/* <h2>This is Heaven</h2> */}
-                          {/* <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation
-                          </p> */}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <div className="col-sm-1" />
             </div>
           </div>
+          <div className="col-sm-1" />
         </section>
       </div>
-
-      // placeholder stuff
-      // <div>
-      //   <h1 className="cover-heading">Register</h1>
-      //   <p className="lead">lorem ipsum</p>
-      // </div>
     );
   }
 }

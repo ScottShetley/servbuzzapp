@@ -16,7 +16,7 @@ const Header2 = props => (
         href="https://fonts.googleapis.com/css?family=Monoton"
         rel="stylesheet"
       />
-      Service Buzz
+      SERVBUZZ
     </NavLink>
     <div className="header-right">
       {props.token === null && (
@@ -27,6 +27,16 @@ const Header2 = props => (
       {props.token === null && (
         <NavLink activeClassName="active" className="nav-link" to="/register">
           Registration
+        </NavLink>
+      )}
+      {props.token && (
+        <NavLink activeClassName="active" className="nav-link" to="/buzzee">
+          Buzzee
+        </NavLink>
+      )}
+      {props.token && (
+        <NavLink activeClassName="active" className="nav-link" to="/buzzor">
+          Buzzor
         </NavLink>
       )}
       {props.token && (

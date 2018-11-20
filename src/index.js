@@ -11,18 +11,9 @@ import {
   Home,
   Login,
   Logout,
-  Register
+  Register,
+  Profile
 } from "./components";
-
-// import {
-//   Buzzee,
-//   Buzzor,
-//   Header,
-//   Home,
-//   Login,
-//   Logout,
-//   Register
-// } from "./components";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
@@ -49,6 +40,7 @@ const App = props => (
                 <Route path="/login" component={Login} />
                 <Route path="/register" component={Register} />
                 <Route path="/logout" component={Logout} />
+                <Route path="/profile" component={Profile} />
                 <Route
                   render={() => (
                     <div>
