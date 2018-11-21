@@ -1,43 +1,59 @@
 import React from "react";
 import { DismissBuzz } from "../actions/actions";
 import { connect } from "react-redux";
-// import Push from "../../node_modules/push.js";
+import Push from "../../node_modules/push.js";
 
 const mapStateToProps = state => {
   return {
-    buzzes: state.buzzes
+    buzzes: state.buzzes,
+    table: state.table
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    //i dont think this is necessary
-    // onFetchBuzzes: buzzes => dispatch(FetchBuzzes(buzzes)),
-    //we will probably need to dispatch the dismissal
+    //we need to dispatch the dismissal
     onDismissBuzz: id => dispatch(DismissBuzz(id))
   };
 };
 
-// messing with the buzzees
-const Buzzee = props => (
-  <div>
-    {/* <h1 className="cover-heading">buzzee works</h1> */}
-    {props.buzzes.map(b => (
-      <div className="row d-flex justify-content-center form-group" key={b._id}>
-        {b.message}
-        <div>
-          {/* Push.create("Buzzor Works")*/}
-          <button
-            className="btn btn-danger"
-            onClick={() => props.onDismissBuzz(b._id)}
-          >
-            Dismiss
-          </button>
-        </div>
-      </div>
-    ))}
-  </div>
-);
+//sets a variable to track items that have caused a notification
+const Buzzee = props => {
+  let time = new Date();
+  let arr = props.buzzes;
+  let notify = () => {
+    arr
+      .filter(b => !b.delivered)
+      .forEach(item => {
+        console.log(item.content);
+        item.delivered = true;
+        Push.create("Buzzor Works");
+      });
+  };
+  notify();
+  notify();
+
+  //displays the buzzes
+  return arr.map(b => (
+    <div className="row d-flex justify-content-center form-group" key={b._id}>
+      <ul className="list-group">
+        <li className="list-group-item buzzList">
+          {b.message + " - " + props.table + " - " + time.toLocaleTimeString()}
+          <div>
+            <button
+              className="btn buzzListButton"
+              onClick={() => {
+                props.onDismissBuzz(b._id);
+              }}
+            >
+              Dismiss
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  ));
+};
 
 export default connect(
   mapStateToProps,

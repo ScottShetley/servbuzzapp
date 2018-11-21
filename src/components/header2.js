@@ -30,16 +30,6 @@ const Header2 = props => (
         </NavLink>
       )}
       {props.token && (
-        <NavLink activeClassName="active" className="nav-link" to="/buzzee">
-          Buzzee
-        </NavLink>
-      )}
-      {props.token && (
-        <NavLink activeClassName="active" className="nav-link" to="/buzzor">
-          Buzzor
-        </NavLink>
-      )}
-      {props.token && (
         <NavLink activeClassName="active" className="nav-link" to="/logout">
           Logout {props.email}
         </NavLink>
