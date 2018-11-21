@@ -1,55 +1,62 @@
 import React from "react";
-import Push from "../../node_modules/push.js";
+import { connect } from "react-redux";
+import { CreateBuzz } from "../actions/actions";
 
-// check for dynamically importing via module
+const mapStateToProps = state => {
+  return {
+    sender: state.sender,
+    table: state.table
+  };
+};
 
-const Buzzor = props => (
-  <div className="flex-container">
-    {/* h1 is unnecessory at this point */}
-    {/* <h1 className="cover-heading">buzzor works</h1> */}
-    <button className="imageButton">
-      <img
-        onClick={() => {
-          Push.create("Buzzor Works");
-        }}
-        alt="Buzzor"
-        src="images\Servicebutton.png"
-        width="600"
-        height="600"
-      />
-    </button>
-  </div>
-);
+const mapDispatchToProps = dispatch => {
+  return {
+    onCreateBuzz: (sender, table, message) =>
+      dispatch(CreateBuzz(sender, table, message))
+  };
+};
 
-export default Buzzor;
-
-// Was stateful, changed to the stateless (above) on Clinton's recommendation
-
-// class Buzzor extends Component {
-//   constructor() {
-//     super();
-//     this.state = {
-//       // userHasClicked: null
-//     };
-//   }
-
-//   // handleNotificationChange = event => {
-//   //   this.setState({ userHasClicked: event.target.value });
-//   // };
-
-//   render() {
-//     return (
-//       <div>
-//         <h1 className="cover-heading">buzzor works</h1>
-//         <button
-//           // className="btn btn-primary"
-//           // onClick={this.handleNotificationChange}
-//           onClick={Push.create("Buzzor Works")}
-//         >
-//           Buzz
-//         </button>
-//       </div>
-//     );
-//   }
-// }
-// export default Buzzor;
+const Buzzor = props => {
+  let message;
+  let sender = props.sender;
+  let table = props.table;
+  return (
+    <div className="flex-container">
+      <div className="form-group">
+        <input
+          className="form-control"
+          type="text"
+          name="message"
+          placeholder="message"
+          ref={m => {
+            message = m;
+          }}
+        />
+        <br />
+        <div
+          className="imageButton"
+          onClick={() => {
+            props.onCreateBuzz(sender, table, message.value);
+          }}
+        >
+          <picture>
+            <source
+              srcset="images\ServicebuttonTestsmall-min.png"
+              media="(max-width: 600px)"
+            />
+            <source
+              srcset="images\ServicebuttonTestmedium-min.png"
+              media="(max-width: 1500px)"
+            />
+            <source srcset="images\ServicebuttonTest400-min.png" />
+            <img src="images\ServBuzzTest.png" alt="Button" />
+          </picture>
+        </div>
+      </div>
+    </div>
+  );
+};
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Buzzor);
