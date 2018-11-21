@@ -1,16 +1,11 @@
-/* @import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css"); */
-/* body {
-  background-image: url("~/images/BGresized.png");
-  background-repeat: no-repeat;
-  background-size: 100%;
-} */
 body {
-  width: 100%;
   height: 100vh;
   background-image: url("~/images/BGresized.png");
-  background-size: cover;
+  background-position: top right;
+  background-size: 1600px 1600px;
+  background-repeat: no-repeat;
+  background-color: #380618;
 }
-
 /* added this so we can see the text on the background */
 header,
 h1,
@@ -19,12 +14,6 @@ p,
   color: white;
 }
 .login-block {
-  /* had to move the background-image to the body to avoid multiple backgrounds */
-  /* background-image: url("~/images/BGresized.png");
-  background-repeat: no-repeat;
-  background-size: 100%; */
-  /* image-rendering: crisp-edges; */
-  /* image-rendering: pixelated; */
   width: auto;
   margin: auto;
   padding: 50px 0;
@@ -36,7 +25,6 @@ p,
   border-radius: 0 10px 10px 0;
   padding: 0;
 }
-
 .carousel-inner > .item {
   border-radius: 0 10px 10px 0;
 }
@@ -53,19 +41,6 @@ p,
 .login-sec {
   padding: 50px 30px;
   position: relative;
-}
-/* .login-sec .copy-text {
-  position: absolute;
-  width: 80%;
-  bottom: 20px;
-  font-size: 13px;
-  text-align: center;
-} */
-.login-sec .copy-text i {
-  color: #883d39;
-}
-.login-sec .copy-text a {
-  color: #883d39;
 }
 .login-sec h2 {
   margin-bottom: 30px;
@@ -113,22 +88,6 @@ p,
   text-shadow: 2px 2px 1px #000;
   background-color: rgba(48, 47, 47, 0.377);
 }
-/* .banner-text p {
-  color: #fff;
-}
-.nav-link.active {
-  color: white !important;
-  background-color: #883d39 !important;
-}
-.banner-text {
-  color: white !important;
-  text-shadow: 2px 2px 1px #000;
-  background-color: rgba(48, 47, 47, 0.377);
-}
-.cover-heading {
-  color: white !important;
-  text-shadow: 4px 4px 2px #000;
-} */
 /* responsive logo. backgroung image still needs to fill botom when made to be responsive */
 .responsive {
   max-width: 100%;
@@ -146,7 +105,6 @@ p,
   background-color: #93bab9;
   padding: 0px 0px;
 }
-
 /* Style the header links */
 .header a.nav-link {
   float: left;
@@ -158,7 +116,6 @@ p,
   line-height: 25px;
   border-radius: 0px;
 }
-
 /* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
 .header a.logo {
   text-decoration: none;
@@ -169,30 +126,20 @@ p,
   border-radius: 0px;
   color: #380618;
 }
-
 /* Change the background color on mouse-over */
 .header a:hover {
   background-color: #380618;
   color: #93bab9;
 }
-
 /* Style the active/current link*/
 .header a.active {
   background-color: #380618;
   color: #93bab9;
 }
-
-/* commented this out to no effect */
-/* .logo a:hover {
-  background-color: #93bab9;
-  color: #380618;
-} */
-
 /* Float the link section to the right */
 .header-right {
   float: right;
 }
-
 /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
 @media screen and (max-width: 500px) {
   .header a {
@@ -204,10 +151,35 @@ p,
     float: none;
   }
 }
-.buzzee {
-  background-color: #93bab9;
-  width: 200px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
+.flex-container {
+  height: calc(100vh - 75px);
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mainSection {
+  height: 100%;
+}
+.cover-container {
+  height: 100%;
+}
+#root {
+  height: 100vh;
+}
+.backGround {
+  height: 100vh;
+}
+.imageButton {
+  background: none;
+  border: 0;
+  border-radius: 50;
+}
+.imageButton :active {
+  transform: translateY(4px);
 }

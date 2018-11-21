@@ -1,8 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "bootstrap/dist/css/bootstrap.css";
-import "jquery/dist/jquery.js";
+import "jquery/dist/jquery.min.js";
 import "./scott.css";
+
 import {
   Buzzee,
   Buzzor,
@@ -10,23 +11,27 @@ import {
   Home,
   Login,
   Logout,
-  Register,
+  Register
 } from "./components";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
-import { createStore, applyMiddleware } from "redux";
+import { createStore, applyMiddleware, compose } from "redux";
 import { reducer } from "./reducers/reducer";
 import thunk from "redux-thunk";
+import { FetchBuzzes } from "./actions/actions";
 
-const store = createStore(reducer, applyMiddleware(thunk));
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)));
+
+// set this on a timer to continuously load the message list?
+store.dispatch(FetchBuzzes());
 
 const App = props => (
   <div className="backGround">
     <Provider store={store}>
       <Router>
         <div className="text-center">
-          {/* <div className="cover-container d-flex h-100 p-3 mx-auto flex-column">
-            <Header /> */}
           <div className="cover-container d-flex h-100 mx-auto flex-column">
             <Header2 />
             <main className="inner cover mainSection">

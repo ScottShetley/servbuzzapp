@@ -4,39 +4,34 @@ import { UserLogin } from "../actions/actions";
 
 const mapDispatchToProps = dispatch => {
   return {
-    onLogin: (email, password) => dispatch(UserLogin(email, password))
+    onLogin: (email, password, table) =>
+      dispatch(UserLogin(email, password, table))
   };
 };
-
-//this is a transition to stateful
 
 class Login extends Component {
   constructor() {
     super();
     this.state = {
       email: "",
-      password: ""
+      password: "",
+      table: "",
+      role: 0
     };
   }
 
-  handleEmailChange = event => {
-    this.setState({ email: event.target.value });
-  };
-
-  handlePasswordChange = event => {
-    this.setState({ password: event.target.value });
+  handleChange = event => {
+    this.setState({ [event.target.name]: event.target.value });
   };
 
   render() {
     return (
-      //scotts template
-
       <div>
         <section className="login-block">
-        <div className="col-1"/>
+          <div className="col-1" />
           <div className="col-10 container">
             <div className="row">
-              <div className="col-sm-1"/>
+              <div className="col-sm-1" />
               <div className="col-sm-10 login-sec">
                 <h2 className="text-center">Login</h2>
                 <div className="login-form">
@@ -46,11 +41,11 @@ class Login extends Component {
                     </label>
 
                     <input
-                      type="email"
+                      type="text"
                       className="form-control"
                       placeholder="email"
                       value={this.state.email}
-                      onChange={this.handleEmailChange}
+                      onChange={this.handleChange}
                       name="email"
                     />
                   </div>
@@ -64,37 +59,74 @@ class Login extends Component {
                       type="password"
                       placeholder="password"
                       value={this.state.password}
-                      onChange={this.handlePasswordChange}
+                      onChange={this.handleChange}
                       name="password"
                     />
                   </div>
-                  <br />
-                  <div className="form-check">
-                    <label className="form-check-label">
-                      <input type="checkbox" className="form-check-input" />
-                      <small>Remember Me</small>
+                  <div className="form-group">
+                    <label htmlFor="table" className="text-uppercase">
+                      Table
                     </label>
+
+                    <input
+                      className="form-control"
+                      type="text"
+                      placeholder="table"
+                      value={this.state.table}
+                      onChange={this.handleChange}
+                      name="table"
+                    />
                   </div>
                   <br />
-
+                  <br />
                   <br />
                   <button
                     className="btn btn-login float-right"
                     onClick={() => {
-                      console.log(this.state.email);
-                      console.log(this.state.password);
-                      this.props.onLogin(this.state.email, this.state.password);
-
+                      function storageAvailable(type) {
+                        try {
+                          var storage = window[type],
+                            x = "__storage_test__";
+                          storage.setItem(x, x);
+                          storage.removeItem(x);
+                          return true;
+                        } catch (e) {
+                          return (
+                            e instanceof DOMException &&
+                            // everything except Firefox
+                            (e.code === 22 ||
+                              // Firefox
+                              e.code === 1014 ||
+                              // test name field too, because code might not be present
+                              // everything except Firefox
+                              e.name === "QuotaExceededError" ||
+                              // Firefox
+                              e.name === "NS_ERROR_DOM_QUOTA_REACHED") &&
+                            // acknowledge QuotaExceededError only if there's something already stored
+                            storage.length !== 0
+                          );
+                        }
+                      }
+                      if (storageAvailable("localStorage")) {
+                        // Yippee! We can use localStorage awesomeness
+                        console.log("Yippee!");
+                      } else {
+                        // Too bad, no localStorage for us
+                        console.log("Awww!");
+                      }
+                      console.log(this.state.table);
+                      this.props.onLogin(
+                        this.state.email,
+                        this.state.password,
+                        this.state.table
+                      );
                       this.props.history.push("/");
                     }}
+                    onFocus={() => {}}
                   >
                     Submit
                   </button>
-                  <ul
-                    className="nav nav-pills mb-3"
-                    id="pills-tab"
-                    role="tablist"
-                  >
+                  <ul className="nav nav-pills" id="pills-tab" role="tablist">
                     <li className="nav-item">
                       <a
                         className="nav-link active"
@@ -105,7 +137,8 @@ class Login extends Component {
                         aria-controls="pills-home"
                         aria-selected="true"
                       >
-                        Buzzee
+                        {/* changed the button text so that buzzor is default */}
+                        Buzzor
                       </a>
                     </li>
                     <li className="nav-item">
@@ -118,17 +151,16 @@ class Login extends Component {
                         aria-controls="pills-profile"
                         aria-selected="false"
                       >
-                        Buzzor
+                        Buzzee
                       </a>
                     </li>
                   </ul>
                 </div>
-                <div className="copy-text" />
               </div>
-              <div className="col-sm-1"/>
+              <div className="col-sm-1" />
             </div>
           </div>
-          <div className="col-1"/>
+          <div className="col-1" />
         </section>
       </div>
     );
