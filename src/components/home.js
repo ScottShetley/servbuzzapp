@@ -21,7 +21,7 @@ const Home = props => (
           <div className="carousel-item active">
             <img
               className="d-block img-fluid"
-              src="images\food-salad-restaurant-person.jpg"
+              src="images\food-salad-restaurant-person-min.jpg"
               alt="First slide"
             />
             <div className="carousel-caption d-none d-md-block">
@@ -40,7 +40,7 @@ const Home = props => (
           <div className="carousel-item">
             <img
               className="d-block img-fluid"
-              src="images\menu-restaurant-vintage-table.jpg"
+              src="images\menu-restaurant-vintage-table-min.jpg"
               alt="Second slide"
             />
             <div className="carousel-caption d-none d-md-block">
@@ -59,7 +59,7 @@ const Home = props => (
           <div className="carousel-item">
             <img
               className="d-block img-fluid"
-              src="images\pexels-photo-1332191.jpeg"
+              src="images\pexels-photo-1332191-min.jpeg"
               alt="Third slide"
             />
 

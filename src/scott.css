@@ -1,6 +1,6 @@
 body {
   height: 100vh;
-  background-image: url("~/images/BGresized.png");
+  background-image: url("~/images/BGresized-min.png");
   background-position: top right;
   background-size: 1600px 1600px;
   background-repeat: no-repeat;
@@ -179,6 +179,22 @@ p,
   background: none;
   border: 0;
   border-radius: 50;
+}
+.imageButton :active {
+  transform: translateY(4px);
+}
+.buzzList {
+  color: #380618;
+  background-color: #93bab9;
+  box-shadow: 2px 2px 5px #380618;
+  text-shadow: 2px 2px 5px #506464;
+  font-size: 18;
+  font-weight: bold;
+}
+.buzzListButton {
+  color: #93bab9;
+  background-color: #380618;
+  box-shadow: 2px 2px 5px #506464;
 }
 .imageButton :active {
   transform: translateY(4px);

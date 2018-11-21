@@ -2,6 +2,7 @@ import {
   CREATE_BUZZ,
   DISMISS_BUZZ,
   LOAD_BUZZES,
+  SET_ROLE,
   USER_LOGIN,
   USER_LOGOUT
 } from "../actions/types";
@@ -10,11 +11,17 @@ const initialState = {
   email: null,
   table: null,
   token: null,
-  buzzes: []
+  buzzes: [],
+  role: 0
 };
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
+    case SET_ROLE:
+      return {
+        ...state,
+        role: action.role
+      };
     case CREATE_BUZZ:
       return {
         ...state,
@@ -35,14 +42,14 @@ export const reducer = (state = initialState, action) => {
         ...state,
         email: action.email,
         table: action.table,
-        sender: action.sender,
+        userId: action.userId,
         token: action.token
       };
     case USER_LOGOUT:
       return {
         ...state,
         email: null,
-        sender: null,
+        userId: null,
         table: null,
         token: null
       };
