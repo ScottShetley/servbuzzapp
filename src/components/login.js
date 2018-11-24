@@ -144,21 +144,27 @@ class Login extends Component {
                         }}
                         className="nav-link active"
                         data-toggle="pill"
-                        href="buzzor"
+                        href="#pills-home"
+                        role="tab"
+                        aria-controls="pills-home"
+                        aria-selected="true"
                       >
-                        Buzzor
+                        {/* changed the button text so that buzzor is default */}
+                        Buzzor (Customer)
                       </a>
                     </li>
                     <li className="nav-item">
                       <a
-                        onClick={() => {
-                          this.props.onSetRole(1);
-                        }}
                         className="nav-link"
+                        id="pills-profile-tab"
                         data-toggle="pill"
-                        href="buzzee"
+                        href="#pills-profile"
+                        role="tab"
+                        aria-controls="pills-profile"
+                        aria-selected="false"
                       >
-                        Buzzee
+                        Buzzee (Server)
+
                       </a>
                     </li>
                   </ul>
