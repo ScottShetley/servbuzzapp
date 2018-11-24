@@ -4,21 +4,22 @@ import { CreateBuzz } from "../actions/actions";
 
 const mapStateToProps = state => {
   return {
-    sender: state.sender,
+    buzzes: state.buzzes,
+    userId: state.userId,
     table: state.table
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    onCreateBuzz: (sender, table, message) =>
-      dispatch(CreateBuzz(sender, table, message))
+    onCreateBuzz: (userId, table, message) =>
+      dispatch(CreateBuzz(userId, table, message))
   };
 };
 
 const Buzzor = props => {
   let message;
-  let sender = props.sender;
+  let userId = props.userId;
   let table = props.table;
   return (
     <div className="flex-container">
@@ -36,19 +37,19 @@ const Buzzor = props => {
         <div
           className="imageButton"
           onClick={() => {
-            props.onCreateBuzz(sender, table, message.value);
+            props.onCreateBuzz(userId, table, message.value);
           }}
         >
           <picture>
             <source
-              srcset="images\ServicebuttonTestsmall-min.png"
+              srcSet="images\ServicebuttonTestsmall-min.png"
               media="(max-width: 600px)"
             />
             <source
-              srcset="images\ServicebuttonTestmedium-min.png"
+              srcSet="images\ServicebuttonTestmedium-min.png"
               media="(max-width: 1500px)"
             />
-            <source srcset="images\ServicebuttonTest400-min.png" />
+            <source srcSet="images\ServicebuttonTest400-min.png" />
             <img src="images\ServBuzzTest.png" alt="Button" />
           </picture>
         </div>

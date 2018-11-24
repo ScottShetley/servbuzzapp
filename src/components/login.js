@@ -1,11 +1,15 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { UserLogin } from "../actions/actions";
+import { UserLogin, SetRole } from "../actions/actions";
 
 const mapDispatchToProps = dispatch => {
   return {
-    onLogin: (email, password, table) =>
-      dispatch(UserLogin(email, password, table))
+    onLogin: (email, password, table) => {
+      dispatch(UserLogin(email, password, table));
+    },
+    onSetRole: role => {
+      dispatch(SetRole(role));
+    }
   };
 };
 
@@ -15,8 +19,7 @@ class Login extends Component {
     this.state = {
       email: "",
       password: "",
-      table: "",
-      role: 0
+      table: ""
     };
   }
 
@@ -29,7 +32,7 @@ class Login extends Component {
       <div>
         <section className="login-block">
           <div className="col-1" />
-          <div className="col-10 container tanBox">
+          <div className="col-10 container">
             <div className="row">
               <div className="col-sm-1" />
               <div className="col-sm-10 login-sec">
@@ -114,13 +117,20 @@ class Login extends Component {
                         // Too bad, no localStorage for us
                         console.log("Awww!");
                       }
-                      console.log(this.state.table);
                       this.props.onLogin(
                         this.state.email,
                         this.state.password,
                         this.state.table
                       );
-                      this.props.history.push("/");
+                      switch (this.props.role) {
+                        case 1:
+                          return (
+                            this.props.history.push("/buzzee"),
+                            this.props.onSetRole(0)
+                          );
+                        default:
+                          return this.props.history.push("/buzzor");
+                      }
                     }}
                     onFocus={() => {}}
                   >
@@ -129,8 +139,10 @@ class Login extends Component {
                   <ul className="nav nav-pills" id="pills-tab" role="tablist">
                     <li className="nav-item">
                       <a
+                        onClick={() => {
+                          this.props.onSetRole(0);
+                        }}
                         className="nav-link active"
-                        id="pills-home-tab"
                         data-toggle="pill"
                         href="#pills-home"
                         role="tab"
@@ -152,6 +164,7 @@ class Login extends Component {
                         aria-selected="false"
                       >
                         Buzzee (Server)
+
                       </a>
                     </li>
                   </ul>
@@ -168,6 +181,6 @@ class Login extends Component {
 }
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(Login);

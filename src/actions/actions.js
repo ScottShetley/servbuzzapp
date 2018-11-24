@@ -3,6 +3,7 @@ import {
   CREATE_BUZZ,
   DISMISS_BUZZ,
   LOAD_BUZZES,
+  SET_ROLE,
   USER_LOGIN,
   USER_LOGOUT
 } from "./types";
@@ -14,10 +15,15 @@ const apiUrl = "http://localhost:8080/buzzes";
 const userUrl = "http://localhost:8080/users";
 // const userUrl = "https://servbuzzserver.herokuapp.com/users";
 
-export const CreateBuzz = (sender, table, message) => {
+export const SetRole = role => ({
+  type: SET_ROLE,
+  role
+});
+
+export const CreateBuzz = (userId, table, message) => {
   return dispatch => {
     return axios
-      .post(apiUrl + "/createBuzz", { sender, table, message })
+      .post(apiUrl + "/createBuzz", { userId, table, message })
       .then(response => {
         dispatch(createBuzzSuccess(response.data));
       });
@@ -51,7 +57,7 @@ export const FetchBuzzes = () => {
 };
 
 export const fetchBuzzesSuccess = buzzes => {
-  console.log(buzzes);
+  // console.log(buzzes);
   return {
     type: LOAD_BUZZES,
     buzzes
@@ -104,11 +110,11 @@ export const UserRegister = (email, password, table) => {
   };
 };
 
-export const userLoginSuccess = (email, sender, table, token) => {
+export const userLoginSuccess = (email, userId, table, token) => {
   return {
     type: USER_LOGIN,
     email: email,
-    sender: sender,
+    userId: userId,
     table: table,
     token: token
   };
