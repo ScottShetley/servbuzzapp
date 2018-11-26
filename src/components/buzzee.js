@@ -1,5 +1,5 @@
 import React from "react";
-import { DismissBuzz } from "../actions/actions";
+import { DismissBuzz, DeliverBuzz } from "../actions/actions";
 import { connect } from "react-redux";
 import Push from "../../node_modules/push.js";
 
@@ -13,7 +13,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     //we need to dispatch the dismissal
-    onDismissBuzz: id => dispatch(DismissBuzz(id))
+    onDismissBuzz: id => dispatch(DismissBuzz(id)),
+    onDeliverBuzz: id => dispatch(DeliverBuzz(id))
   };
 };
 
@@ -26,12 +27,12 @@ const Buzzee = props => {
       .filter(b => !b.delivered)
       .forEach(item => {
         console.log(item.content);
-        item.delivered = true;
-        Push.create("Buzzor Works");
+        props.onDeliverBuzz(item._id);
+        Push.create(item.message);
       });
   };
   notify();
-  notify();
+  // notify();
 
   //displays the buzzes
   return arr.map(b => (

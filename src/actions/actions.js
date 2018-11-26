@@ -15,6 +15,12 @@ const apiUrl = "http://localhost:8080/buzzes";
 const userUrl = "http://localhost:8080/users";
 // const userUrl = "https://servbuzzserver.herokuapp.com/users";
 
+export const DeliverBuzz = id => {
+  return dispatch => {
+    return axios.post(apiUrl + "/deliverBuzz/" + id);
+  };
+};
+
 export const SetRole = role => ({
   type: SET_ROLE,
   role
