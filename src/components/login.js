@@ -2,6 +2,12 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { UserLogin, SetRole } from "../actions/actions";
 
+const mapStateToProps = state => {
+  return {
+    role: state.role
+  };
+};
+
 const mapDispatchToProps = dispatch => {
   return {
     onLogin: (email, password, table) => {
