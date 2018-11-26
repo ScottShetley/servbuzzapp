@@ -51,7 +51,8 @@ export const reducer = (state = initialState, action) => {
         email: null,
         userId: null,
         table: null,
-        token: null
+        token: null,
+        role: 0
       };
 
     default:
