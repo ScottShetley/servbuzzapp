@@ -131,25 +131,22 @@ class Register extends Component {
                             this.props.onSetRole(0);
                           }}
                           className="nav-link active"
-                          id="pills-home-tab"
                           data-toggle="pill"
-                          href="#pills-home"
-                          role="tab"
-                          aria-controls="pills-home"
-                          aria-selected="true"
+                          href="buzzor"
                         >
-                          {/* changed the button text so that buzzor is default */}
-                          Buzzor (Customer)
+                          Buzzor
                         </a>
                       </li>
                       <li className="nav-item">
                         <a
+                          onClick={() => {
+                            this.props.onSetRole(1);
+                          }}
                           className="nav-link"
-                          id="pills-profile-tab"
                           data-toggle="pill"
-                          href="buzzor"
+                          href="buzzee"
                         >
-                          Buzzee (Server)
+                          Buzzee
                         </a>
                       </li>
                     </ul>
