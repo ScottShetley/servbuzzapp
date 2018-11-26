@@ -32,7 +32,7 @@ p,
   text-align: left;
   left: 5%;
 }
-.tanBox {
+.container {
   background: #d5c9bd;
   border-radius: 10px;
   width: auto;
@@ -83,24 +83,23 @@ p,
   margin-top: 20px;
   border-radius: 3px;
 }
-/* shadow box around text */
 .banner-text {
   color: white !important;
   text-shadow: 2px 2px 1px #000;
   background-color: rgba(48, 47, 47, 0.377);
 }
 /* responsive logo. backgroung image still needs to fill botom when made to be responsive */
-/* .responsive {
+.responsive {
   max-width: 100%;
   height: 100%;
-} */
+}
 .paraStyle {
   color: white !important;
   text-shadow: 4px 4px 2px #000;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: xx-large;
 }
-/* Style the header with a blue background and some padding */
+/* Style the header with a grey background and some padding */
 .header {
   overflow: hidden;
   background-color: #93bab9;
