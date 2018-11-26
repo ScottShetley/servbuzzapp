@@ -24,6 +24,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)));
 
+store.dispatch(FetchBuzzes());
 setInterval(function() {
   store.dispatch(FetchBuzzes());
   console.log("fetching buzzes");
