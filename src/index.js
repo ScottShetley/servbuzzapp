@@ -24,29 +24,10 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)));
 
-// set this on a timer to continuously load the message list?
-// const listBuzzes = store.dispatch(FetchBuzzes());
-// const intervalId = window.setInterval(store.dispatch(FetchBuzzes()), 1000);
-// store.dispatch(FetchBuzzes());
-// store.dispatch();
-
-// let intervalId;
-// function listBuzzes() {
-//   intervalId = window.setInterval(store.dispatch(), 1000, FetchBuzzes());
-// }
-
-// function stopList() {
-//   clearInterval(intervalId);
-// }
-
-// let intervalID;
-// function updateBuzzList() {
-//   intervalID = window.setInterval(store.dispatch(FetchBuzzes()), 1000);
-//   console.log(intervalID);
-// }
-// updateBuzzList();
-
-store.dispatch(FetchBuzzes());
+setInterval(function() {
+  store.dispatch(FetchBuzzes());
+  console.log("fetching buzzes");
+}, 3000);
 
 const App = props => (
   <div className="backGround">
