@@ -24,8 +24,10 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(reducer, composeEnhancers(applyMiddleware(thunk)));
 
-// set this on a timer to continuously load the message list?
-store.dispatch(FetchBuzzes());
+setInterval(function() {
+  store.dispatch(FetchBuzzes());
+  console.log("fetching buzzes");
+}, 3000);
 
 const App = props => (
   <div className="backGround">
@@ -44,7 +46,7 @@ const App = props => (
                 <Route path="/logout" component={Logout} />
                 <Route
                   render={() => (
-                    <div>
+                    <div className="notFound">
                       page not found
                       <br />
                       <span
@@ -52,7 +54,7 @@ const App = props => (
                         role="img"
                         aria-label="not found"
                       >
-                        🤬
+                        &#x1F605;
                       </span>
                     </div>
                   )}
