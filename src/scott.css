@@ -32,7 +32,7 @@ p,
   text-align: left;
   left: 5%;
 }
-.container {
+.tanBox {
   background: #d5c9bd;
   border-radius: 10px;
   width: auto;
@@ -198,4 +198,11 @@ p,
 }
 .imageButton :active {
   transform: translateY(4px);
+}
+.notFound {
+  color: #93bab9;
+  text-shadow: 2px 2px 1px #000;
+}
+.carousel-item img {
+  max-width: 100vh;
 }
