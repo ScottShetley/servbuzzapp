@@ -34,11 +34,15 @@ class Register extends Component {
   };
 
   render() {
+    const isEnabled =
+      this.state.email.length > 0 &&
+      this.state.password.length > 0 &&
+      this.state.table.length;
     return (
       <div>
         <section className="login-block">
           <div className="col-1" />
-          <div className="col-10 container">
+          <div className="col-10 container tanBox">
             <div className="row">
               <div className="col-sm-1" />
               <div className="col-sm-10 login-sec">
@@ -50,12 +54,12 @@ class Register extends Component {
                     </label>
 
                     <input
-                      type="text"
                       className="form-control"
-                      placeholder="email"
-                      value={this.state.email}
-                      onChange={this.handleChange}
                       name="email"
+                      onChange={this.handleChange}
+                      placeholder="email"
+                      type="text"
+                      value={this.state.email}
                     />
                   </div>
 
@@ -66,11 +70,11 @@ class Register extends Component {
 
                     <input
                       className="form-control"
+                      name="password"
+                      onChange={this.handleChange}
                       placeholder="password"
                       type="password"
                       value={this.state.password}
-                      onChange={this.handleChange}
-                      name="password"
                     />
                   </div>
 
@@ -80,10 +84,10 @@ class Register extends Component {
                     </label>
                     <input
                       className="form-control"
+                      name="confirmPassword"
+                      onChange={this.handleChange}
                       placeholder="confirm password"
                       type="password"
-                      onChange={this.handleChange}
-                      name="confirmPassword"
                     />
                   </div>
 
@@ -94,16 +98,17 @@ class Register extends Component {
 
                     <input
                       className="form-control"
-                      type="text"
-                      placeholder="table"
-                      value={this.state.table}
-                      onChange={this.handleChange}
                       name="table"
+                      onChange={this.handleChange}
+                      placeholder="table"
+                      type="text"
+                      value={this.state.table}
                     />
                   </div>
 
                   <div className="form-group">
                     <button
+                      disabled={!isEnabled}
                       className="btn btn-login float-right"
                       onClick={() => {
                         this.props.onRegister(

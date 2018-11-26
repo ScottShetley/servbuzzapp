@@ -57,7 +57,6 @@ export const FetchBuzzes = () => {
 };
 
 export const fetchBuzzesSuccess = buzzes => {
-  // console.log(buzzes);
   return {
     type: LOAD_BUZZES,
     buzzes
